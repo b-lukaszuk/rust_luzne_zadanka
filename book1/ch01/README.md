@@ -1,6 +1,10 @@
 # Book 1
 
-Chapter 1 from "The Rust Programming Language" written at a whim.
+Selected bits from "The Rust Programming Language" written at a whim.
+
+## Chapter 1
+
+Getting Started.
 
 Link to the [chapter online](https://rust-book.cs.brown.edu/ch01-00-getting-started.html).
 
