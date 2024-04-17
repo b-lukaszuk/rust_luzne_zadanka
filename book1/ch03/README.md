@@ -6,7 +6,7 @@ Selected bits from "The Rust Programming Language" written at a whim.
 
 Common Programming Concepts.
 
-Link to the [chapter online](https://rust-book.cs.brown.edu/ch03-00-common-programming-concepts.html).
+Link to the [chapter online](https://doc.rust-lang.org/book/ch03-00-common-programming-concepts.html).
 
 ## Caution note
 

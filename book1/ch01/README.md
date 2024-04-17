@@ -6,7 +6,7 @@ Selected bits from "The Rust Programming Language" written at a whim.
 
 Getting Started.
 
-Link to the [chapter online](https://rust-book.cs.brown.edu/ch01-00-getting-started.html).
+Link to the [chapter online](https://doc.rust-lang.org/book/ch01-00-getting-started.html).
 
 ## Caution note
 

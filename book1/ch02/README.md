@@ -6,7 +6,7 @@ Selected bits from "The Rust Programming Language" written at a whim.
 
 Programming a Guessing Game.
 
-Link to the [chapter online](https://rust-book.cs.brown.edu/ch02-00-guessing-game-tutorial.html).
+Link to the [chapter online](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html).
 
 ## Caution note
 
