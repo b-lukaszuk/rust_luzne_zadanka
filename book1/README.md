@@ -2,7 +2,7 @@
 
 Selected bits from "The Rust Programming Language" written at a whim.
 
-Link to the [book online](https://rust-book.cs.brown.edu/).
+Link to the [book online](https://doc.rust-lang.org/book/title-page.html).
 
 ## Caution note
 
