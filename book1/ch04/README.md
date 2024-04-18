@@ -6,7 +6,7 @@ Selected bits from "The Rust Programming Language" written at a whim.
 
 Understanding Ownership.
 
-Link to the [chapter online](https://rust-book.cs.brown.edu/ch04-00-understanding-ownership.html).
+Link to the [chapter online](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html).
 
 ## Caution note
 
