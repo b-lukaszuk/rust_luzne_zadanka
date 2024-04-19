@@ -1,30 +1,64 @@
 fn main() {
-    // let m1 = String::from("Hello");
-    // let m2 = String::from("world");
-    // greet(m1, m2);
-    // println!("{} {}", m1, m2); // Error: m1 and m2 are moved
+    // let s1 = String::from("hello");
+    // let len = calculate_length(&s1);
+    // println!("The length of '{}' is {}.", s1, len);
 
-    // let m1 = String::from("Hello");
-    // let m2 = String::from("world");
-    // let (m1_again, m2_again) = greet2(m1, m2);
-    // println!("{} {}", m1_again, m2_again);
+    // let s = String::from("hello");
+    // change(&s);
 
-    // let m1 = String::from("Hello");
-    // let m2 = String::from("world");
-    // greet3(&m1, &m2); // note the ampersands
-    // println!("{} {}", m1, m2);
+    // let mut s = String::from("hello");
+    // change(&mut s);
+    // println!("{}", s);
+
+    // let mut s = String::from("hello");
+    // let r1 = &mut s;
+    // let r2 = &mut s; // cannot borrow mut ref a second time
+    // println!("{}, {}", r1, r2);
+
+    // let mut s = String::from("hello");
+    // {
+    //     let r1 = &mut s;
+    // } // r1 goes out of scope here
+    // let r2 = &mut s;
+    // println!("{}", r2);
+
+    // let mut s = String::from("hello");
+    // let r1 = &s; // no problem
+    // let r2 = &s; // no problem
+    // let r3 = &mut s; // BIG PROBLEM
+
+    // let mut s = String::from("hello");
+    // let r1 = &s; // no problem
+    // let r2 = &s; // no problem
+    // println!("{} and {}", r1, r2);
+    // // variables r1 and r2 will not be used after this point
+    // let r3 = &mut s; // no problem
+    // println!("{}", r3);
+
+    // let reference_to_nothing = dangle();
+
+    let reference_to_something = no_dangle();
+    println!("{}", reference_to_something);
 }
 
-// fn greet(g1: String, g2: String) {
-//     println!("{} {}", g1, g2);
+// fn calculate_length(s: &String) -> usize {
+//     s.len()
 // }
 
-// fn greet2(g1: String, g2: String) -> (String, String) {
-//     println!("{} {}", g1, g2);
-//     (g1, g2)
+// fn change(some_string: &String) {
+//     some_string.push_str(", world"); // error reference is not mutable
 // }
 
-// fn greet3(g1: &String, g2: &String) {
-//     // note ampersands
-//     println!("{} {}", g1, g2);
+// fn change(some_string: &mut String) {
+//     some_string.push_str(", world");
 // }
+
+// fn dangle() -> &String {
+//     let s = String::from("hello");
+//     &s
+// }
+
+fn no_dangle() -> String {
+    let s = String::from("hello");
+    s
+}
