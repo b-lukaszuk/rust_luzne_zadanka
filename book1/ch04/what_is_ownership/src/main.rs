@@ -1,45 +1,42 @@
-fn main() {
-    // let s = "hello"; // string literal
-    // println!("{}", s);
+// fn main() {
+//     let s = "hello";
+//     println!("{}", s);
+// }
 
-    // String type to be put on the heap at runtime
-    // let s = String::from("hello");
-    // println!("{}", s);
+// fn main() {
+//     let s = String::from("hello");
+//     println!("{}", s);
+// }
 
-    // let mut s = String::from("hello");
-    // s.push_str(", world!"); // appends a literal to a String
-    //                         // Strings can be mutated but literals cannot
-    // println!("{}", s);
+// fn main() {
+//     let mut s = String::from("hello");
+//     s.push_str(", world!"); // push_str() appends a literal to a String
+//     println!("{}", s); // This will print `hello, world!`
+// }
 
-    // let x = 5;
-    // let y = x; // two 5s put (copied) on the stack
-    // println!("{} {}", x, y);
+// fn main() {
+//     let x = 5;
+//     let y = x;
+//     println!("{}, {}", x, y);
+// }
 
-    // let s1 = String::from("hello");
-    // let s2 = s1;
-    // // println!("{}", s1); // error, s2 is the owner
-    // println!("{}", s2); // s1 was moved into s2
+// fn main() {
+//     let s1 = String::from("hello");
+//     let s2 = s1;
+//     println!("{}, {}", s1, s2); // error s1 moved ownership to s2
+// }
 
-    // let s1 = String::from("hello");
-    // let s2 = s1.clone(); // like (deep?)copy from other programming languages
-    // println!("s1 = {}, s2 = {}", s1, s2);
+// fn main() {
+//     let s1 = String::from("hello");
+//     let s2 = s1.clone();
+//     println!("s1 = {}, s2 = {}", s1, s2);
+// }
 
-    // The mechanics of passing a value to a function are similar to
-    // those when assigning a value to a variable
-    // let s = String::from("hello");
-    // takes_ownership(s); // cannot use s after that line
-    // let x = 5;
-    // makes_copy(x); // can use x after that line
-
-    // let s1 = gives_ownership();
-    // let s2 = String::from("hello");
-    // let s3 = takes_and_gives_back(s2); // cannot use s2 after that line
-    // println!("{}, {}", s1, s3);
-
-    let s1 = String::from("hello");
-    let (s2, len) = calculate_length(s1);
-    println!("The length of '{}' is {}.", s2, len);
-}
+// fn main() {
+//     let x = 5;
+//     let y = x;
+//     println!("x = {}, y = {}", x, y);
+// }
 
 // fn takes_ownership(some_string: String) {
 //     println!("{}", some_string);
@@ -47,6 +44,13 @@ fn main() {
 
 // fn makes_copy(some_integer: i32) {
 //     println!("{}", some_integer);
+// }
+
+// fn main() {
+//     let s = String::from("hello");
+//     takes_ownership(s);
+//     let x = 5;
+//     makes_copy(x);
 // }
 
 // fn gives_ownership() -> String {
@@ -58,7 +62,20 @@ fn main() {
 //     a_string
 // }
 
+// fn main() {
+//     let s1 = gives_ownership();
+//     let s2 = String::from("hello");
+//     let s3 = takes_and_gives_back(s2);
+//     println!("{}, {}", s1, s3);
+// }
+
 fn calculate_length(s: String) -> (String, usize) {
     let length = s.len();
     (s, length)
+}
+
+fn main() {
+    let s1 = String::from("hello");
+    let (s2, len) = calculate_length(s1);
+    println!("The length of '{}' is {}.", s2, len);
 }
