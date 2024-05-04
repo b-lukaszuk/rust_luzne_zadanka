@@ -41,10 +41,64 @@
 //     println!("s1: {}, s2: {}", s1, s2);
 // }
 
+// fn main() {
+//     let mut s1 = String::from("foo");
+//     let mut s2 = String::from("foo");
+//     s1.push('b');
+//     s2.push_str("bar");
+//     println!("s1: {}, s2: {}", s1, s2);
+// }
+
+// fn main() {
+//     let s1 = String::from("Hello, ");
+//     let s2 = String::from("world!");
+//     // + internally uses: add(self, s: &str) -> String
+//     let s3 = s1 + &s2; // string concatenation, s1 is moved here
+//     println!("s3: {}", s3);
+// }
+
+// fn main() {
+//     let s1 = String::from("tic");
+//     let s2 = String::from("tac");
+//     let s3 = String::from("toe");
+
+//     let s = s1 + "-" + &s2 + "-" + &s3;
+
+//     println!("s: {}", s);
+// }
+
+// fn main() {
+//     let s1 = String::from("tic");
+//     let s2 = String::from("tac");
+//     let s3 = String::from("toe");
+
+//     // neither s1, s2, nor s3 is moved
+//     let s = format!("{s1}-{s2}-{s3}");
+
+//     println!("s: {}", s);
+// }
+
+// fn main() {
+//     let s = String::from("hello");
+//     // indexing of strings is not possible in Rust
+//     let h = s[0];
+//     println!("s: {}", s);
+//     println!("h: {}", h);
+// }
+
+// fn main() {
+//     let hello = "Здравствуйте";
+//     let s = &hello[0..4]; // slices are ok
+//     println!("s: {}", s);
+//     println!("hello: {}", hello);
+// }
+
 fn main() {
-    let mut s1 = String::from("foo");
-    let mut s2 = String::from("foo");
-    s1.push('b');
-    s2.push_str("bar");
-    println!("s1: {}, s2: {}", s1, s2);
+    let hello = "Здравствуйте";
+    for c in hello.chars() {
+        println!("{c}");
+    }
+    for b in hello.bytes() {
+        println!("{b}");
+    }
 }
