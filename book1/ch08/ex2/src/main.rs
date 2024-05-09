@@ -1,4 +1,4 @@
-fn starts_with_vowel(word: &str) -> bool {
+pub(crate) fn starts_with_vowel(word: &str) -> bool {
     for ch in ("aeiouy").chars() {
         if word.starts_with(ch) {
             return true;
