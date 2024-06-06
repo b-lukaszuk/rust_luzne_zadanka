@@ -2,7 +2,7 @@
 
 Selected bits from "The Rust Programming Language" written at a whim.
 
-## Chapter 12
+## Chapter 13
 
 Functional Language Features: Iterators and Closures.
 
