@@ -16,10 +16,18 @@ impl<T> Deref for MyBox<T> {
     }
 }
 
+fn hello(name: &str) {
+    println!("Hello, {name}!");
+}
+
 fn main() {
     let x = 5;
     let y = MyBox::new(x);
+    let m = MyBox::new(String::from("Rust"));
 
     assert_eq!(5, x);
-    assert_eq!(5, *y);
+    assert_eq!(5, *y); // under the hood Rust does: *(y.deref())
+
+    // without implicit deref you would have to use: hello(&(*m)[..]);
+    hello(&m);
 }
