@@ -9,7 +9,7 @@ fn code_letter(letter: char, rotate_by: i32) -> char {
     if letter.is_uppercase() {
         alphabet = alphabet.to_uppercase();
     }
-    let rot: i32 = rotate_by.abs();
+    let rot: i32 = rotate_by.abs() % alphabet.len() as i32;
     let mut rotated_alphabet: String = format!(
         "{}{}",
         &alphabet[rot as usize..alphabet.len()],
