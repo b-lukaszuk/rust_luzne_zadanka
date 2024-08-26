@@ -1,3 +1,5 @@
+// simple solution,
+// not idiot/error-proof, not optimized for speed
 struct Celsius {
     degs: f64,
 }

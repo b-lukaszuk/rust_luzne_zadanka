@@ -1,3 +1,5 @@
+// simple solution,
+// not idiot/error-proof, not optimized for speed
 use rand::Rng;
 
 fn get_rand_int(min_incl: i32, max_incl: i32) -> i32 {
