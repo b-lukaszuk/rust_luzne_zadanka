@@ -73,5 +73,5 @@ fn main() {
     add_pieces_to_row(&mut board, split_to_chars(String::from("RNBQKBNR")), 7);
     print_board(&board);
 
-    println!("\nThat's all. Goodbye!");
+    println!("That's all. Goodbye!");
 }
