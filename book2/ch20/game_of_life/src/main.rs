@@ -121,6 +121,17 @@ fn should_cell_be_alive(u: &Universe, x: i32, y: i32) -> bool {
     return num_live_neighbours == 3;
 }
 
+fn are_all_cells_dead(u: &Universe) -> bool {
+    for r in 1..HEIGHT {
+        for c in 1..WIDTH {
+            if u[r][c] {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 fn run_game_of_life() {
     let mut u: Universe = get_rand_universe();
     let mut cur_cycle: u32 = 0;
@@ -131,6 +142,10 @@ fn run_game_of_life() {
         u = get_next_state(&u);
         cur_cycle += 1;
         reprint(&u, cur_cycle);
+        if are_all_cells_dead(&u) {
+            println!("All cells are dead.");
+            break;
+        }
     }
 }
 
@@ -152,5 +167,5 @@ fn main() {
 
     run_game_of_life();
 
-    println!("\nThat's all. Goodbye!\n");
+    println!("\nThat's all. Goodbye!");
 }
