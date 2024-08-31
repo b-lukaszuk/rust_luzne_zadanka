@@ -76,8 +76,49 @@ fn reprint(u: &Universe, cycle_num: u32) {
     print_universe(u, cycle_num);
 }
 
-fn get_next_state(_u: &Universe) -> Universe {
-    get_rand_universe()
+fn get_next_state(u: &Universe) -> Universe {
+    let mut new_universe: Universe = get_empty_universe();
+    for r in 1..HEIGHT {
+        for c in 1..WIDTH {
+            new_universe[r][c] = should_cell_be_alive(u, r as i32, c as i32);
+        }
+    }
+    new_universe
+}
+
+fn is_within_range(num: i32, min_incl: i32, max_excl: i32) -> bool {
+    (num >= min_incl) && (num < max_excl)
+}
+
+fn is_cell_within_range(x: i32, y: i32) -> bool {
+    is_within_range(x, 0, HEIGHT as i32) && is_within_range(y, 0, WIDTH as i32)
+}
+
+fn get_num_live_neighbours(u: &Universe, x: i32, y: i32) -> i32 {
+    if !is_cell_within_range(x, y) {
+        return 0;
+    }
+    let mut count: i32 = 0;
+    for r in -1..=1 {
+        for c in -1..=1 {
+            let (xi, yi) = (x + r, y + c);
+            if (xi == x && yi == y) || !is_cell_within_range(xi, yi) {
+                continue;
+            }
+            if u[xi as usize][yi as usize] {
+                count += 1;
+            }
+        }
+    }
+    count
+}
+
+fn should_cell_be_alive(u: &Universe, x: i32, y: i32) -> bool {
+    let num_live_neighbours: i32 = get_num_live_neighbours(u, x, y);
+    if u[x as usize][y as usize] {
+        return is_within_range(num_live_neighbours, 2, 4);
+    }
+    return num_live_neighbours == 3;
 }
 
 fn run_game_of_life() {
@@ -111,5 +152,5 @@ fn main() {
 
     run_game_of_life();
 
-    println!("\nThat's all. Goodbye!\n")
+    println!("\nThat's all. Goodbye!\n");
 }
