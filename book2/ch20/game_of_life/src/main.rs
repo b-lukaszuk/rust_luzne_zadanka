@@ -33,8 +33,8 @@ fn get_rand_dead_or_alive() -> bool {
 
 fn get_rand_universe() -> Universe {
     let mut universe: Universe = get_empty_universe();
-    for r in 1..HEIGHT {
-        for c in 1..WIDTH {
+    for r in 0..HEIGHT {
+        for c in 0..WIDTH {
             universe[r][c] = get_rand_dead_or_alive();
         }
     }
@@ -50,8 +50,8 @@ fn get_field_symbol(field: bool) -> &'static str {
 
 fn print_universe(u: &Universe, cycle_num: u32) {
     let mut population: u32 = 0;
-    for r in 1..HEIGHT {
-        for c in 1..WIDTH {
+    for r in 0..HEIGHT {
+        for c in 0..WIDTH {
             print!("{}", get_field_symbol(u[r][c]));
             if u[r][c] {
                 population += 1;
@@ -66,8 +66,9 @@ fn print_universe(u: &Universe, cycle_num: u32) {
 // https://en.wikipedia.org/wiki/ANSI_escape_code
 fn clean_printout() {
     // "\033[xxxxA" - xxx moves cursor up xxxx lines
+    // +1 cause cycle/population line
     // in rust you need to use hex code instead of octal, hence "\033" is "\x1b"
-    print!("\x1b[{}A", HEIGHT);
+    print!("\x1b[{}A", HEIGHT + 1);
     print!("\x1b[J"); // clears from cursor position till end of display
 }
 
@@ -78,8 +79,8 @@ fn reprint(u: &Universe, cycle_num: u32) {
 
 fn get_next_state(u: &Universe) -> Universe {
     let mut new_universe: Universe = get_empty_universe();
-    for r in 1..HEIGHT {
-        for c in 1..WIDTH {
+    for r in 0..HEIGHT {
+        for c in 0..WIDTH {
             new_universe[r][c] = should_cell_be_alive(u, r as i32, c as i32);
         }
     }
@@ -122,8 +123,8 @@ fn should_cell_be_alive(u: &Universe, x: i32, y: i32) -> bool {
 }
 
 fn are_all_cells_dead(u: &Universe) -> bool {
-    for r in 1..HEIGHT {
-        for c in 1..WIDTH {
+    for r in 0..HEIGHT {
+        for c in 0..WIDTH {
             if u[r][c] {
                 return false;
             }
