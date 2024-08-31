@@ -135,14 +135,12 @@ fn are_all_cells_dead(u: &Universe) -> bool {
 
 fn run_game_of_life() {
     let mut u: Universe = get_rand_universe();
-    let mut cur_cycle: u32 = 0;
-    print_universe(&u, cur_cycle);
+    print_universe(&u, 0);
 
-    for _i in 1..=NUM_CYCLES {
+    for i in 1..=NUM_CYCLES {
         thread::sleep(Duration::from_millis(DELAY_MS));
         u = get_next_state(&u);
-        cur_cycle += 1;
-        reprint(&u, cur_cycle);
+        reprint(&u, i as u32);
         if are_all_cells_dead(&u) {
             println!("All cells are dead.");
             break;
