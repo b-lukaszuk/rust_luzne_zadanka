@@ -28,12 +28,23 @@ impl Display for City {
     }
 }
 
-#[allow(dead_code)]
 #[derive(Debug)]
 struct Color {
     red: u8,
     green: u8,
     blue: u8,
+}
+
+impl Display for Color {
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+        write!(
+            f,
+            "RGB ({r}, {g}, {b}) 0x{r:0>2X}{g:0>2X}{b:0>2X}",
+            r = self.red,
+            g = self.green,
+            b = self.blue
+        )
+    }
 }
 
 fn main() {
@@ -76,6 +87,6 @@ fn main() {
     ] {
         // Switch to the use {} once you've added an implementation
         // for fmt::Display
-        println!("{:?}", color);
+        println!("{}", color);
     }
 }
