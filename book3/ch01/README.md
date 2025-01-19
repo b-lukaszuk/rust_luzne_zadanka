@@ -8,7 +8,7 @@ The snippets/programs written at a whim, maybe modified, and used for educationa
 
 # Ch 1
 
-[Hello world](https://doc.rust-lang.org/rust-by-example/hello.html)
+Link to the chapeter online: [Hello world](https://doc.rust-lang.org/rust-by-example/hello.html)
 
 ## Caution note
 
