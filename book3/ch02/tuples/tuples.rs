@@ -1,3 +1,5 @@
+use std::fmt;
+
 fn reverse(pair: (i32, bool)) -> (bool, i32) {
     let (int_param, bool_param) = pair;
 
@@ -5,9 +7,14 @@ fn reverse(pair: (i32, bool)) -> (bool, i32) {
 }
 
 // The following struct is for the activity.
-#[allow(dead_code)]
 #[derive(Debug)]
 struct Matrix(f32, f32, f32, f32);
+
+impl fmt::Display for Matrix {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "({} {})\n({} {})", self.0, self.1, self.2, self.3)
+    }
+}
 
 fn main() {
     let long_tuple = (
@@ -41,5 +48,5 @@ fn main() {
     println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);
 
     let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
-    println!("{:?}", matrix);
+    println!("Matrix:\n{}", matrix);
 }
