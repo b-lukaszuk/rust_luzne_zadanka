@@ -30,8 +30,8 @@ fn get_area(r: Rectangle) -> f32 {
         top_left: tl,
         bottom_right: br,
     } = r;
-    let height = (tl.y - br.y).abs();
-    let width = (br.x - tl.x).abs();
+    let height: f32 = (tl.y - br.y).abs();
+    let width: f32 = (br.x - tl.x).abs();
     height * width
 }
 
@@ -86,7 +86,7 @@ fn main() {
     let side_len = 10.0;
     let rct = get_square(pt, side_len);
     println!(
-        "\nSquare of rect struct with side len = {}.\n{:#?}\n",
+        "Square made of rectangle struct with side len = {}.\n{:#?}\n",
         side_len, rct
     );
 
