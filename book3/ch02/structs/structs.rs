@@ -35,6 +35,17 @@ fn get_area(r: Rectangle) -> f32 {
     height * width
 }
 
+fn get_square(top_left: Point, side_len: f32) -> Rectangle {
+    let bottom_right: Point = Point {
+        x: top_left.x + side_len,
+        y: top_left.y - side_len,
+    };
+    Rectangle {
+        top_left,
+        bottom_right,
+    }
+}
+
 fn main() {
     let name = String::from("Peter");
     let age = 27;
@@ -70,6 +81,14 @@ fn main() {
     };
     println!("\n{:#?}", rectangle);
     println!("Area: {:.2} [cm^2]\n", get_area(rectangle));
+
+    let pt = Point { x: 0.0, y: 0.0 };
+    let side_len = 10.0;
+    let rct = get_square(pt, side_len);
+    println!(
+        "\nSquare of rect struct with side len = {}.\n{:#?}\n",
+        side_len, rct
+    );
 
     // instantiate a unit struct
     let _unit = Unit;
