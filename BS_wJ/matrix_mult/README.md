@@ -6,7 +6,7 @@ The snippets/programs written at a whim, maybe modified, and used for educationa
 
 ## Task description
 
-write some functions for basic matrix multiplication as seen [here] (https://b-lukaszuk.github.io/BS_wJ_eng/mat_multip.html)
+Write some functions for basic matrix multiplication as seen [here](https://b-lukaszuk.github.io/BS_wJ_eng/mat_multip.html).
 
 ## Caution note
 

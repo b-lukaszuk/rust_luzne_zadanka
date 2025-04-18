@@ -43,10 +43,16 @@ fn my_print(matrix: &Vec<Vec<i32>>) {
     }
 }
 
-fn main() {
+fn print_intro() {
     println!("Toy program for multiplying matrices.");
     println!("Warning. It may or may not work correctly.\n");
+}
 
+fn print_outro() {
+    println!("\nThat's all. Goodbye!");
+}
+
+fn print_example1() {
     let a: Vec<Vec<i32>> = vec![vec![1, 2, 3], vec![4, 5, 6]];
     let b: Vec<Vec<i32>> = vec![vec![7, 8], vec![9, 10], vec![11, 12]];
     my_print(&a);
@@ -54,9 +60,9 @@ fn main() {
     my_print(&b);
     println!("gives");
     my_print(&mult(&a, &b));
+}
 
-    println!("");
-
+fn print_example2() {
     let c: Vec<Vec<i32>> = vec![vec![-1, 3, 5], vec![5, 5, 2]];
     let d: Vec<Vec<i32>> = vec![vec![3, 4], vec![3, -2], vec![4, -2]];
     my_print(&c);
@@ -64,6 +70,14 @@ fn main() {
     my_print(&d);
     println!("gives");
     my_print(&mult(&c, &d));
+}
 
-    println!("\nThat's all. Goodbye!");
+fn main() {
+    print_intro();
+
+    print_example1();
+    println!("");
+    print_example2();
+
+    print_outro();
 }

@@ -6,7 +6,7 @@ The snippets/programs written at a whim, maybe modified, and used for educationa
 
 ## Task description
 
-Write a solution to the bat and ball problem as explained in detail [here] (https://b-lukaszuk.github.io/BS_wJ_eng/bat_and_ball.html)
+Write a solution to the bat and ball problem as explained in detail [here] (https://b-lukaszuk.github.io/BS_wJ_eng/bat_and_ball.html).
 
 ## Caution note
 
