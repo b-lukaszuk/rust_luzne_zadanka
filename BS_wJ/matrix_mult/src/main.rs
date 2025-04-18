@@ -44,7 +44,7 @@ fn my_print(matrix: &Vec<Vec<i32>>) {
 }
 
 fn main() {
-    println!("Toy program for multiplying matrices. ");
+    println!("Toy program for multiplying matrices.");
     println!("Warning. It may or may not work correctly.\n");
 
     let a: Vec<Vec<i32>> = vec![vec![1, 2, 3], vec![4, 5, 6]];
