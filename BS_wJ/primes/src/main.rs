@@ -45,7 +45,7 @@ fn get_primes_v2(up_to: u32) -> Vec<u32> {
 }
 
 fn print_intro() {
-    println!("Toy program for primes problem.");
+    println!("Toy program for the primes problem.");
     println!("Warning. It may or may not work correctly.\n");
 }
 

@@ -22,7 +22,7 @@ fn get_ratios(cylinders: &Vec<Cylinder>, radius_change: i32, height_change: i32)
 }
 
 fn print_intro() {
-    println!("Toy program for toothpaste problem.");
+    println!("Toy program for the toothpaste problem.");
     println!("Warning. It may or may not work correctly.\n");
 }
 

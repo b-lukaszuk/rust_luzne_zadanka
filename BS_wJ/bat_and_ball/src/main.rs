@@ -73,7 +73,7 @@ fn get_swap(matrix: &Vec<Vec<f64>>) -> Vec<Vec<f64>> {
 }
 
 fn print_intro() {
-    println!("Toy program for bat and ball problem.");
+    println!("Toy program for the bat and ball problem.");
     println!("Warning. It may or may not work correctly.\n");
 }
 
