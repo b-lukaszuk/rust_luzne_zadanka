@@ -6,7 +6,7 @@ The snippets/programs written at a whim, maybe modified, and used for educationa
 
 ## Task description
 
-Write a solution to the primes problem as explained in detail [here] (https://b-lukaszuk.github.io/BS_wJ_eng/bile.html).
+Write a solution to the primes problem as explained in detail [here](https://b-lukaszuk.github.io/BS_wJ_eng/bile.html).
 
 ## Caution note
 

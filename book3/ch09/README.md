@@ -10,6 +10,8 @@ The snippets/programs written at a whim, maybe modified, and used for educationa
 
 Link to the chapeter online: [Functions](https://doc.rust-lang.org/rust-by-example/fn.html)
 
+next todo: https://doc.rust-lang.org/rust-by-example/fn/closures/closure_examples.html
+
 ## Caution note
 
 **The content of this folder may be incorrect, erroneous and/or harmful. Use it at Your own risk.**

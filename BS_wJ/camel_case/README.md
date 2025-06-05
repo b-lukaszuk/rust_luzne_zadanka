@@ -6,8 +6,7 @@ The snippets/programs written at a whim, maybe modified, and used for educationa
 
 ## Task description
 
-Write a solution to the camel case problem as explained in detail
-[here](https://b-lukaszuk.github.io/BS_wJ_eng/camel_case.html).
+Write a solution to the camel case problem as explained in detail [here](https://b-lukaszuk.github.io/BS_wJ_eng/camel_case.html).
 
 ## Caution note
 
