@@ -1,4 +1,4 @@
-use std::{thread, time};
+use std::{io, io::stdin, thread, time};
 
 fn get_progress_bar(perc: u32) -> String {
     assert!(perc <= 100);
@@ -35,23 +35,32 @@ fn clear_printout() {
 }
 
 fn print_intro() {
-    println!("Toy program for the progress bar problem.");
-    println!("Warning. It may or may not work correctly.\n");
+    println!("Toy program.");
+    println!("It animates a progress bar (it may or may not work correctly).");
+    println!("Note: your terminal must support ANSI escape codes.\n");
+}
+
+fn print_solution() -> io::Result<()> {
+    println!("Continue with the animation? [Y/n]");
+    let mut choice = String::new();
+    stdin().read_line(&mut choice)?;
+    if vec!["y".to_string(), "yes".to_string(), "".to_string()]
+        .contains(&choice.trim().to_lowercase())
+    {
+        animate_progress_bar();
+    }
+
+    Ok(())
 }
 
 fn print_outro() {
     println!("\nThat's all. Goodbye!");
 }
 
-fn print_solution() {
-    println!("The example go here.");
-    animate_progress_bar();
-}
-
 fn main() {
     print_intro();
 
-    print_solution();
+    let _ = print_solution();
 
     print_outro();
 }
