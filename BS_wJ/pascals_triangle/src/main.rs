@@ -24,6 +24,14 @@ fn get_pascal_triangle(n: u32) -> Vec<Vec<u32>> {
     triangle
 }
 
+fn get_num_len(n: u32) -> usize {
+    n.to_string().len()
+}
+
+fn get_max_num_len(v: &Vec<u32>) -> usize {
+    v.iter().map(|n| get_num_len(*n)).max().unwrap()
+}
+
 fn print_pasc_traingle(n: u32) {
     assert!(0 < n && n < 11);
     let triangle: Vec<Vec<u32>> = get_pascal_triangle(n);
