@@ -32,6 +32,20 @@ fn get_max_num_len(v: &Vec<u32>) -> usize {
     v.iter().map(|n| get_num_len(*n)).max().unwrap()
 }
 
+fn center(sth: String, to_len: u32) -> String {
+    let len: u32 = sth.len() as u32;
+    assert!(to_len >= len);
+    let diff: u32 = to_len - len;
+    let left_space_len: u32 = (diff as f64 / 2.0).round() as u32;
+    let right_spade_len: u32 = diff - left_space_len;
+    format!(
+        "{}{}{}",
+        " ".repeat(left_space_len as usize),
+        sth,
+        " ".repeat(right_spade_len as usize)
+    )
+}
+
 fn print_pasc_traingle(n: u32) {
     assert!(0 < n && n < 11);
     let triangle: Vec<Vec<u32>> = get_pascal_triangle(n);
