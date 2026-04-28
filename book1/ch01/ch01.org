@@ -24,3 +24,28 @@ $ rustc --version
 
 #+end_src
 
+*** Update
+
+#+begin_src
+
+$ rustup update
+
+#+end_src
+
+*** Uninstall
+
+and
+
+#+begin_src
+
+$ rustup self uninstall
+
+#+end_src
+
+*** Local copy of documentation
+
+#+begin_src
+
+$ rustup doc
+
+#+end_src
