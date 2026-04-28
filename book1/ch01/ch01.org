@@ -1,4 +1,7 @@
 #+title: Ch01
+#+STARTUP: overview
+#+STARTUP: indent
+#+OPTIONS: \n: t
 
 * Getting Started
 
