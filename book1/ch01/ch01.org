@@ -52,3 +52,26 @@ $ rustup self uninstall
 $ rustup doc
 
 #+end_src
+
+running the book offline
+
+#+begin_src
+
+$ rustup doc --book
+
+#+end_src
+
+*** Working offline with This Book
+
+#+begin_src
+
+$ cargo new get-dependencies
+$ cd get-dependencies
+$ cargo add rand@0.8.5 trpl@0.2.0
+
+#+end_src
+
+Afterwards no need to keep `get-dependencies/` folder.
+
+Afterwards may use `--offline` flag with all `cargo` commands to use cached
+versions instead of attempting to use the network
