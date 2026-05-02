@@ -107,3 +107,58 @@ $ ./main
 
 #+end_src
 
+*** Cargo
+
+Check for cargo
+
+#+begin_src
+
+$ cargo --version
+
+#+end_src
+
+Project creation
+
+#+begin_src
+
+$ cargo new hello_cargo
+$ cd hello_cargo/
+$ tree
+
+#+end_src
+
+#+begin_src
+.
+├── Cargo.toml
+└── src
+    └── main.rs
+
+2 directories, 2 files
+#+end_src
+
+main.rs contents:
+
+#+begin_src
+
+fn main() {
+    println!("Hello, world!");
+}
+
+#+end_src
+
+running:
+
+#+begin_src
+
+$ cargo build
+$ cargo run
+
+#+end_src
+
+check build, but without compilation:
+
+#+begin_src
+
+$ cargo check
+
+#+end_src
