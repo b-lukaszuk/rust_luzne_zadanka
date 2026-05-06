@@ -76,7 +76,6 @@ Afterwards no need to keep `get-dependencies/` folder.
 Afterwards may use `--offline` flag with all `cargo` commands to use cached
 versions instead of attempting to use the network
 
-
 ** Program structure
 
 *** Manual
@@ -136,6 +135,22 @@ $ tree
 2 directories, 2 files
 #+end_src
 
+Cargo.toml contents:
+
+#+begin_src
+
+[package]
+name = "hello_cargo"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+#+end_src
+
+`[package]` - cur project's name
+`[dependencies]` - extra libraries, aka. crates
+
 main.rs contents:
 
 #+begin_src
@@ -160,5 +175,13 @@ check build, but without compilation:
 #+begin_src
 
 $ cargo check
+
+#+end_src
+
+to build/compile project with optimizations
+
+#+begin_src
+
+$ cargo build --release
 
 #+end_src
