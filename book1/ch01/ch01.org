@@ -185,3 +185,13 @@ to build/compile project with optimizations
 $ cargo build --release
 
 #+end_src
+
+Working with Git (be aware of the risks!):
+
+#+begin_src
+
+$ git clone example.org/someproject
+$ cd someproject
+$ cargo build
+
+#+end_src
