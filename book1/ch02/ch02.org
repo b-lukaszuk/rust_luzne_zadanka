@@ -6,3 +6,13 @@
 * Programming a Guessing Game
 
 https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html
+
+* Setting Up a New Project
+
+#+begin_src
+
+$ cargo new guessing_game
+$ cd guessing_game
+
+#+end_src
+
