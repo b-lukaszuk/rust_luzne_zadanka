@@ -20,7 +20,7 @@ $ cd guessing_game
 
 #+begin_src
 
-use std::io;
+use std::io; // import
 
 fn main() {
     println!("Guess the number!");
@@ -30,8 +30,9 @@ fn main() {
     let mut guess = String::new();
 
     io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+        .read_line(&mut guess) // returns Result type (Ok | Err)
+        .expect("Failed to read line"); // if Result is Err display msg and crash program
+                                        // if Result is Ok return value in Ok (the number of bytes typed by user)
 
     println!("You guessed: {guess}");
 }
