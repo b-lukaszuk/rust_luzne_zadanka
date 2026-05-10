@@ -38,3 +38,14 @@ fn main() {
 }
 
 #+end_src
+
+* Generating a Secret Number
+
+Add the followint to Cargo.toml:
+
+#+begin_src
+
+[dependencies]
+rand = "0.8.5"
+
+#+end_src
