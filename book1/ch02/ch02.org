@@ -255,3 +255,10 @@ fn main() {
 }
 
 #+end_src
+
+* Summary
+
+The project contained hands-on introduction to many new concepts: 'let',
+'match', etc. The concepts will be discussed in greater detail in the future
+chapters. Moreover, the program itself could be improved (e.g. by improving TUI,
+messages to the user, etc.)
