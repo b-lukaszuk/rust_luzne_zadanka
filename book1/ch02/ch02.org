@@ -188,3 +188,27 @@ fn main() {
 // -- snip --
 
 #+end_src
+
+* Handling Invalid Input
+
+#+begin_src
+
+// -- snip --
+
+        io::stdin()
+            .read_line(&mut guess) // returns Result type (Ok | Err)
+            // if Result is Err display msg and crash program
+            // if Result is Ok return value in Ok (the number of bytes typed by user)
+            .expect("Failed to read line");
+
+        // shadows previous value of guess (must have let in front of it)
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+
+        println!("You guessed: {guess}");
+
+// -- snip --
+
+#+end_src
