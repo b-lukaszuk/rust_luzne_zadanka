@@ -6,3 +6,33 @@
 * Common Programming Concepts
 
 https://doc.rust-lang.org/book/ch03-00-common-programming-concepts.html
+
+* Variables and Mutability
+
+By default variables are immutable. Once you declare them with let you cannot
+reassign a value to them.
+
+#+begin_src
+
+fn main() {
+    let x = 5;
+    println!("The value of x is: {x}");
+    x = 6; // error, you cannot reassign
+    println!("The value of x is: {x}");
+}
+
+#+end_src
+
+If you want to change the value in the future label it with 'mut' word during
+declaration.
+
+#+begin_src
+
+fn main() {
+    let mut x = 5;
+    println!("The value of x is: {x}");
+    x = 6; // reassigning, no problem
+    println!("The value of x is: {x}");
+}
+
+#+end_src
