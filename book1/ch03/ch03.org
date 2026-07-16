@@ -55,3 +55,23 @@ const SECS_IN_HOUR: u32 = 60 * 60; // must have type declaration
 
 They are valid for the entire time a program runs (within the scope in which
 they are declared).
+
+* Shadowing
+
+You can declare (with 'let') a new variable with the same name as the one that
+already exists. In such a case you got shadowing (compare with Ch02.
+Programming a Guessing Game).
+
+Example:
+
+#+begin_src
+
+fn main() {
+    let x = 5;
+    println!("The value of x is: {x}");
+
+    let x = 6;
+    println!("The value of x is: {x}");
+}
+
+#+end_src
