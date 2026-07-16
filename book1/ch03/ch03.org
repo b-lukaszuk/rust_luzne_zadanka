@@ -7,7 +7,7 @@
 
 https://doc.rust-lang.org/book/ch03-00-common-programming-concepts.html
 
-* Variables and Mutability
+** Variables and Mutability
 
 By default variables are immutable. Once you declare them with let you cannot
 reassign a value to them.
@@ -37,7 +37,7 @@ fn main() {
 
 #+end_src
 
-* Constants
+*** Constants
 
 You declare constants with 'const' keyword. They cannot change, they can be
 declared in any scope, the cannot be followed with 'mut'.
@@ -56,7 +56,7 @@ const SECS_IN_HOUR: u32 = 60 * 60; // must have type declaration
 They are valid for the entire time a program runs (within the scope in which
 they are declared).
 
-* Shadowing
+*** Shadowing
 
 You can declare (with 'let') a new variable with the same name as the one that
 already exists. In such a case you got shadowing (compare with Ch02.
