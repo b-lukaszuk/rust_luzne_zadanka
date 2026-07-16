@@ -76,6 +76,8 @@ fn main() {
 
 #+end_src
 
+If you omit 'let' (e.g. by mistake) you will get an error.
+
 Another example:
 
 #+begin_src
@@ -90,6 +92,64 @@ fn main() {
     }
 
     println!("Again, the value of x is: {x}");
+}
+
+#+end_src
+
+Thanks to shadowing we can change the type of a variable, example:
+
+#+begin_src
+
+fn main() {
+    let spaces: &str = "    ";
+    println!("The value of spaces is: '{spaces}'");
+
+    let spaces: usize = spaces.len();
+    println!("The value of spaces is: '{spaces}'");
+}
+
+#+end_src
+
+But if we use 'mut' keyword then the type stays on and we get an error.
+
+#+begin_src
+
+fn main() {
+    let mut spaces: &str = "    ";
+    println!("The value of spaces is: '{spaces}'");
+
+    // or
+    // spaces = spaces.len();
+    spaces: usize = spaces.len();
+    println!("The value of spaces is: '{spaces}'");
+}
+
+#+end_src
+
+But this is OK:
+
+#+begin_src
+
+fn main() {
+    let mut spaces: &str = "    ";
+    println!("The value of spaces is: '{spaces}'");
+
+    spaces = "zzz";
+    println!("The value of spaces is: '{spaces}'");
+}
+
+#+end_src
+
+And that is OK (we'll get a warning about unused 'mut' though):
+
+#+begin_src
+
+fn main() {
+    let mut spaces: &str = "    ";
+    println!("The value of spaces is: '{spaces}'");
+
+    let spaces: usize = spaces.len();
+    println!("The value of spaces is: '{spaces}'");
 }
 
 #+end_src
