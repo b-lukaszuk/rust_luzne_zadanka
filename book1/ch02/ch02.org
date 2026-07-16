@@ -7,7 +7,7 @@
 
 https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html
 
-* Setting Up a New Project
+** Setting Up a New Project
 
 #+begin_src
 
@@ -16,7 +16,7 @@ $ cd guessing_game
 
 #+end_src
 
-* Processing a Guess
+** Processing a Guess
 
 #+begin_src
 
@@ -40,7 +40,7 @@ fn main() {
 
 #+end_src
 
-* Generating a Secret Number
+** Generating a Secret Number
 
 Add the following to Cargo.toml:
 
@@ -59,7 +59,7 @@ $ cargo build # to download the crate (build compiles the current package)
 
 #+end_src
 
-* Generating a Random Number
+** Generating a Random Number
 
 #+begin_src
 
@@ -87,7 +87,7 @@ fn main() {
 
 #+end_src
 
-* Comparing the Guess to the Secret Number
+** Comparing the Guess to the Secret Number
 
 #+begin_src
 
@@ -127,7 +127,7 @@ fn main() {
 
 #+end_src
 
-* Allowing Multiple Guesses
+** Allowing Multiple Guesses
 
 #+begin_src
 
@@ -170,7 +170,7 @@ fn main() {
 
 #+end_src
 
-* Graceful Quit
+** Graceful Quit
 
 #+begin_src
 
@@ -189,7 +189,7 @@ fn main() {
 
 #+end_src
 
-* Handling Invalid Input
+** Handling Invalid Input
 
 #+begin_src
 
@@ -213,7 +213,7 @@ fn main() {
 
 #+end_src
 
-* Complete Program
+** Complete Program
 
 #+begin_src
 
@@ -256,7 +256,7 @@ fn main() {
 
 #+end_src
 
-* Summary
+** Summary
 
 The project contained hands-on introduction to many new concepts: 'let',
 'match', etc. The concepts will be discussed in greater detail in the future
