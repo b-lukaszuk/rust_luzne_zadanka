@@ -75,3 +75,21 @@ fn main() {
 }
 
 #+end_src
+
+Another example:
+
+#+begin_src
+
+fn main() {
+    let x = 5;
+    println!("The value of x is: {x}");
+
+    {
+        let x = 6;
+        println!("The value of x is: {x}");
+    }
+
+    println!("Again, the value of x is: {x}");
+}
+
+#+end_src
