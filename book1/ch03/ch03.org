@@ -186,3 +186,13 @@ let guess = "42".parse::<f32>().expect("Not a number!");
 println!("The value of guess is: '{guess}");
 
 #+end_src
+
+*** Scalar Types
+
+Four primary scalar types: integers (i8, i16, i32, i64, i128, and u8, u16, etc.,
+and isize/usize), floating-point numbers (f32, f64), Booleans, and characters.
+
+'i32' is a default integer in Rust, 'f64' is a default float, 'isize' and
+'usize' depend on the computer architecture and are use for indexing.
+
+You can write '1000' or '1_000'.
