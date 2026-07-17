@@ -190,7 +190,9 @@ println!("The value of guess is: '{guess}");
 *** Scalar Types
 
 Four primary scalar types: integers (i8, i16, i32, i64, i128, and u8, u16, etc.,
-and isize/usize), floating-point numbers (f32, f64), Booleans, and characters.
+and isize/usize), floating-point numbers (f32, f64), Booleans ('bool' with
+'true' or 'false'), and characters ('char' - 4 bytes in size, represents Unicode
+characters).
 
 'i32' is a default integer in Rust, 'f64' is a default float, 'isize' and
 'usize' depend on the computer architecture and are use for indexing.
