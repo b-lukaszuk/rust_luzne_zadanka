@@ -153,3 +153,36 @@ fn main() {
 }
 
 #+end_src
+
+** Data Types
+
+Every value in Rust got a certain data type as Rust is a statically typed
+language. It got, however, type inference.
+
+The type inference does not always work, e.g.
+
+#+begin_src
+
+let guess = "42".parse().expect("Not a number!");
+println!("The value of guess is: '{guess}");
+
+#+end_src
+
+As here '42' could be parsed as 'u32', 'i32', 'f32', etc. (different type of
+ints/floats). Therefore, you need to help the compiler with:
+
+#+begin_src
+
+let guess: u32 = "42".parse().expect("Not a number!");
+println!("The value of guess is: '{guess}");
+
+#+end_src
+
+or
+
+#+begin_src
+
+let guess = "42".parse::<f32>().expect("Not a number!");
+println!("The value of guess is: '{guess}");
+
+#+end_src
