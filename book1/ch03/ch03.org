@@ -198,3 +198,24 @@ characters).
 'usize' depend on the computer architecture and are use for indexing.
 
 You can write '1000' or '1_000'.
+
+*** Compound Types
+
+**** Tuples
+
+#+begin_src
+
+fn main() {
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+    let (x, y, z) = tup; // destructuring tuple
+
+    let first_elt = tup.0;
+    let last_elt = tup.2;
+
+    println!("The contents of tup is: '{tup:?}'");
+    println!("The value of y is: '{y}'");
+    println!("The first_elt and the last_elt are: '{first_elt}' and '{last_elt}'");
+}
+
+#+end_src
