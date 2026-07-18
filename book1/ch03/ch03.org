@@ -219,3 +219,35 @@ fn main() {
 }
 
 #+end_src
+
+**** Array
+
+Exemplary code:
+
+#+begin_src
+
+fn main() {
+    // allocated on the stack, fixed num of elements
+    let a = [1, 2, 3, 4, 5];
+    let b: [i32; 3] = [10, 20, 30];
+    let c = [1; 3]; // init value; num elts in array
+    let first_elt = a[0];
+
+    println!("The arr a contents are: '{a:?}'");
+    println!("The arr b contents are: '{b:?}'");
+    println!("The arr c contents are: '{c:?}'");
+    println!("The arr a first element is: '{first_elt}'");
+}
+
+#+end_src
+
+Output:
+
+#+begin_src
+
+The arr a contents are: '[1, 2, 3, 4, 5]'
+The arr b contents are: '[10, 20, 30]'
+The arr c contents are: '[1, 1, 1]'
+The arr a first element is: '1'
+
+#+end_src
