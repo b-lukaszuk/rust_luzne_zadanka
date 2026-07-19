@@ -292,3 +292,21 @@ fn main() {
 #+end_src>
 
 work equally well.
+
+*** Parameters
+
+Parameters and returned values from the function must be always explicitly
+provided (unless there is no return value).
+
+#+begin_src
+
+fn print_value_and_label(value: i32, unit_label: char) {
+    println!("The measurement is: {value} [{unit_label}].");
+}
+
+fn main() {
+    println!("main function");
+    print_value_and_label(5, 'h');
+}
+
+#+end_src
