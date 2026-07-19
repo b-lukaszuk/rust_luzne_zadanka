@@ -310,3 +310,28 @@ fn main() {
 }
 
 #+end_src
+
+*** Statements and Expressions
+
+Statements are instructions that perform some action and do not return a value.
+
+Expressions evaluate to a resultant value.
+
+Statements end with ';' (semicolon).
+
+'let' (variable declarations) is a statement, '{}' (blocks of code) - are for
+expressions.
+
+#+begin_src
+
+fn main() {
+    // let x = 6; // statement, OK
+    // let x = (let y = 6); // not OK, you cannot chain statements
+    let x = {
+        let y = 1;
+        y + 1
+    }; // OK, {} is an expression that returns its last line value
+    println!("x is {x}");
+}
+
+#+end_src
