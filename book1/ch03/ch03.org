@@ -255,3 +255,40 @@ The arr a first element is: '1'
 Arrays need to have known size. Use it if the number of elements will not need
 to change. Otherwise go with a vector (it may shirnk and grow in size on
 demand). In Rust arrays are checked for boundaries and an error may be produced.
+
+** Functions
+
+Function (and variable) names are written with 'snake_case'. To define a
+function you use a 'fn' keyword. The entry of a program is 'main' function. The
+order (before or after its first usage) of a function declaration does not
+matter, e.g. both:
+
+#+begin_src
+
+fn main() {
+    println!("main function");
+    another_function();
+}
+
+fn another_function() {
+    println!("another function");
+}
+
+#+end_src
+
+and
+
+#+begin_src
+
+fn another_function() {
+    println!("another function");
+}
+
+fn main() {
+    println!("main function");
+    another_function();
+}
+
+#+end_src>
+
+work equally well.
