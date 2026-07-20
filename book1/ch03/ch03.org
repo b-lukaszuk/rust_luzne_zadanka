@@ -405,3 +405,7 @@ fn main() {
 
 Here, in 'x + 1;' the semicolon makes it a statement. It ('add_one') returns a
 '()' unit value, so we got a type mismatch.
+
+** Comments
+
+A comment starts with two slashes ('//') and continues till the end of the line.
