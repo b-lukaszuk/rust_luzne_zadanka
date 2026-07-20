@@ -409,3 +409,10 @@ Here, in 'x + 1;' the semicolon makes it a statement. It ('add_one') returns a
 ** Comments
 
 A comment starts with two slashes ('//') and continues till the end of the line.
+
+** Control Flow
+
+Here, we got standard 'if'-'else' blocks, that rely on true/false values (no
+truthy/falsy).
+
+No 'elif', you type 'else if condition { what to do }'.
