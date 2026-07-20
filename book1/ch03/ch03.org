@@ -335,3 +335,73 @@ fn main() {
 }
 
 #+end_src
+
+*** Return Values
+
+We declare a return value from a function with '->', but customarily we don't
+use a 'return' keyword (although we may).
+
+#+begin_src
+
+fn get_five() -> i32 {
+    5 // no semicolon, because it's an expression
+}
+
+fn main() {
+    let x = get_five();
+
+    println!("The value of x is: {x}")
+}
+
+#+end_src
+
+Or
+
+#+begin_src
+
+fn get_five() -> i32 {
+    return 5; // semicolon, not sure why?
+}
+
+fn main() {
+    let x = get_five();
+
+    println!("The value of x is: {x}")
+}
+
+#+end_src
+
+Or
+
+#+begin_src
+
+fn add_one(x: i32) -> i32 {
+    x + 1
+}
+
+fn main() {
+    let x = add_one(2);
+
+    println!("The value of x is: {x}")
+}
+
+#+end_src
+
+But ';' after '1' gives an error.
+
+#+begin_src
+
+fn add_one(x: i32) -> i32 {
+    x + 1; // error
+}
+
+fn main() {
+    let x = add_one(2);
+
+    println!("The value of x is: {x}")
+}
+
+#+end_src
+
+Here, in 'x + 1;' the semicolon makes it a statement. It ('add_one') returns a
+'()' unit value, so we got a type mismatch.
