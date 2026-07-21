@@ -416,3 +416,25 @@ Here, we got standard 'if'-'else' blocks, that rely on true/false values (no
 truthy/falsy).
 
 No 'elif', you type 'else if condition { what to do }'.
+
+'if' is an expression so we can use it on the right side of a 'let' statement.
+
+#+begin_src
+
+fn main() {
+    let x = if true { 1 } else { 2 };
+    let y = if false { 1 } else { 2 };
+    println!("The value of x is: {x}, the value of y is: {y}.");
+}
+
+#+end_src
+
+prints:
+
+#+begin_src
+
+The value of x is: 1, the value of y is: 2.
+
+#+end_src
+
+The 'if' - 'else' branches must have compatible (the same) types.
