@@ -438,3 +438,25 @@ The value of x is: 1, the value of y is: 2.
 #+end_src
 
 The 'if' - 'else' branches must have compatible (the same) types.
+
+Rust has three kinds of loops: 'loop', 'while', and 'for'.
+
+You may return values from a loop.
+
+#+begin_src
+
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The value in the counter is {counter}, the value in the result is {result}.");
+}
+
+#+end_src
