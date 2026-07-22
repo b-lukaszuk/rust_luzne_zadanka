@@ -458,7 +458,7 @@ fn main() {
         if counter == 10 {
             break counter * 2;
         }
-    };
+    }; // needs semicolon, since assignment (let) is a statement
 
     println!("The value in the counter is {counter}, the value in the result is {result}.");
 }
@@ -507,5 +507,22 @@ remaining = 9
 count = 2
 remaining = 10
 End count = 2
+
+#+end_src
+
+'loop' - loops forever, 'while' loops for as long as condition is true.
+
+#+begin_src
+
+fn main() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{number}!");
+        number -= 1;
+    }
+
+    println!("LIFTOFF!!!")
+}
 
 #+end_src
