@@ -510,7 +510,8 @@ End count = 2
 
 #+end_src
 
-'loop' - loops forever, 'while' loops for as long as condition is true.
+'loop' - loops forever (although you could 'break' it), 'while' loops for as
+long as condition is true.
 
 #+begin_src
 
@@ -520,6 +521,51 @@ fn main() {
     while number != 0 {
         println!("{number}!");
         number -= 1;
+    }
+
+    println!("LIFTOFF!!!")
+}
+
+#+end_src
+
+'for' is for looping through a collection.
+
+#+begin_src
+
+fn main() {
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        // error prone looping through a collection
+        println!("the value is: {}", a[index]);
+
+        index += 1;
+    }
+}
+
+#+end_src
+
+#+begin_src
+
+fn main() {
+    let a = [10, 20, 30, 40, 50];
+
+    for elt in a { // safer traversal with for
+        println!("the value is: {elt}");
+    }
+}
+
+#+end_src
+
+
+Countdown with for and ranges.
+
+#+begin_src
+
+fn main() {
+    for number in (1..4).rev() {
+        println!("{number}");
     }
 
     println!("LIFTOFF!!!")
