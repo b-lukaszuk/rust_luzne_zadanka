@@ -412,6 +412,8 @@ A comment starts with two slashes ('//') and continues till the end of the line.
 
 ** Control Flow
 
+*** If-Else
+
 Here, we got standard 'if'-'else' blocks, that rely on true/false values (no
 truthy/falsy).
 
@@ -438,6 +440,8 @@ The value of x is: 1, the value of y is: 2.
 #+end_src
 
 The 'if' - 'else' branches must have compatible (the same) types.
+
+*** Loops
 
 Rust has three kinds of loops: 'loop', 'while', and 'for'.
 
