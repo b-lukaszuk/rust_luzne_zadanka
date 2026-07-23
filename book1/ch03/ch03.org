@@ -595,3 +595,25 @@ fn main() {
 }
 
 #+end_src
+
+*** Exercise 2
+
+Generate the n-th Fibonacci number.
+
+#+begin_src
+
+fn get_nth_fibonacci(n: u32) -> u32 {
+    if n < 2 {
+        return n;
+    } else {
+        return get_nth_fibonacci(n - 1) + get_nth_fibonacci(n - 2);
+    }
+}
+
+fn main() {
+    for n in 0..13 {
+        println!("{}-th Fibonnaci = {}", n, get_nth_fibonacci(n));
+    }
+}
+
+#+end_src
