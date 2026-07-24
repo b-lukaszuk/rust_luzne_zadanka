@@ -20,3 +20,12 @@ runtime.
 Stack contains data of well defined size and operates based on LIFO (last in,
 first out) rule. Data with unknown size at compile time or a size that might
 change must be stored on the heap instead.
+
+Heap is less organized. A certain amount of space in memory is reserved and a
+pointer to it is returned (and put on the stack). We call this allocation of
+memory (pushing values onto the stack is not considered allocation).
+
+In general the stack is faster and the heap is slower and got some overhead.
+
+The ownership deals with the heap, i.e. keeping track of data on the heap,
+minimizing the amount of duplicate data, and cleaning the unused data.
