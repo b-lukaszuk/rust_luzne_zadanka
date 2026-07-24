@@ -8,4 +8,15 @@
 https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html
 
 Ownership is a unique feature of rust. It allows to make memory safety
-guarantees without needing a garbage collector.
+guarantees without needing a garbage collector. Ownership is a set of rules that
+govern how a Rust program manages memory. If any of the rules are violated, the
+program won't compile.
+
+** The Stack and the Heap
+
+Both the stack and the heap are parts of memory available to a program at
+runtime.
+
+Stack contains data of well defined size and operates based on LIFO (last in,
+first out) rule. Data with unknown size at compile time or a size that might
+change must be stored on the heap instead.
