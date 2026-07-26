@@ -30,6 +30,9 @@ In general the stack is faster and the heap is slower and got some overhead.
 The ownership deals with the heap, i.e. keeping track of data on the heap,
 minimizing the amount of duplicate data, and cleaning the unused data.
 
+This and/or following section/s will be dealing a lot with strings (as they are
+located on the heap).
+
 ** Ownership Rules
 
 Each value has an owner.
@@ -37,3 +40,15 @@ Each value has an owner.
 There can only be one owner at a time.
 
 When the owner goes out of scope, the value will be dropped.
+
+** Variable Scope
+
+#+begin_src
+
+    {
+        // beginning of scope, no visibility cause no declaration
+        let s = "hello"; // string literal, beginning of visibility
+                         // string literals are hard-coded into the text of a program
+    } // end of scope, end of visibility and validity
+
+#+end_src
