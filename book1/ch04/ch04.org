@@ -33,6 +33,9 @@ minimizing the amount of duplicate data, and cleaning the unused data.
 This and/or following section/s will be dealing a lot with strings (as they are
 located on the heap).
 
+The data types covered so far (Chapter 3) are of known size, can be stored on
+stack.
+
 ** Ownership Rules
 
 Each value has an owner.
@@ -45,10 +48,42 @@ When the owner goes out of scope, the value will be dropped.
 
 #+begin_src
 
-    {
-        // beginning of scope, no visibility cause no declaration
-        let s = "hello"; // string literal, beginning of visibility
-                         // string literals are hard-coded into the text of a program
-    } // end of scope, end of visibility and validity
+{
+    // beginning of scope, no visibility cause no declaration
+    let s = "hello"; // string literal, beginning of visibility
+                     // string literals are hard-coded into the text of a program
+} // end of scope, end of visibility and validity
+
+#+end_src
+
+** The String Type
+
+'String' is an example of data type that is stored on the heap.
+
+String literals (see the 'let s' from the code snippet above) are immutable and
+must be known at compile time. The above is not good for the data provided by
+the user, hence we got the 'String' type.
+
+Creation of 'String', from string literal:
+
+#+begin_src
+
+let s = String::from("hello");
+
+#+end_src
+
+To do that, we use a function 'from' that acts on a 'String' type, hence the
+'::' operator (kind of like class/static method).
+
+Now we can mutate that string.
+
+#+begin_src
+
+fn main() {
+    let mut s = String::from("hello");
+    println!("{s}");
+    s.push_str(", world!");
+    println!("{s}");
+}
 
 #+end_src
