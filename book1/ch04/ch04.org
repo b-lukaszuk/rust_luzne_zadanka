@@ -29,3 +29,11 @@ In general the stack is faster and the heap is slower and got some overhead.
 
 The ownership deals with the heap, i.e. keeping track of data on the heap,
 minimizing the amount of duplicate data, and cleaning the unused data.
+
+** Ownership Rules
+
+Each value has an owner.
+
+There can only be one owner at a time.
+
+When the owner goes out of scope, the value will be dropped.
