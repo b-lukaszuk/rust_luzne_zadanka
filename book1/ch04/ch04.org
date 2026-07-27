@@ -100,6 +100,7 @@ We request the memory by 'String::from'. The memory is automatically returned
 one the variable that owns it goes out of scope:
 
 #+begin_src
+
 {
     let s = String::from("hello");
 } // end of scope, the memory allocated for 's' can be returned
@@ -116,3 +117,14 @@ a String 's' is composed of three parts (stored on the stack):
 - len - length of the string (dependent on currently used memory)
 - capacity - capacity of the string (how many chars can be stored without asking
   for more memory)
+
+If we do something like:
+
+#+begin_src
+
+let s1 = String::from("hello");
+let s2 = s1;
+
+#+end_src
+
+Then we copy the data on the stack (pointer, len, capacity) but not on the heap.
