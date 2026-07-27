@@ -97,4 +97,22 @@ The 'String' is allocated on the heap since memory must be requested (allocated)
 and freed at runtime.
 
 We request the memory by 'String::from'. The memory is automatically returned
-one the variable that owns it goes out of scope.
+one the variable that owns it goes out of scope:
+
+#+begin_src
+{
+    let s = String::from("hello");
+} // end of scope, the memory allocated for 's' can be returned
+
+#+end_src
+
+At the ending curly bracket ('}') the memory is returned (it is done
+automatically, under the hood Rust calls a special function 'drop' that does
+that)
+
+a String 's' is composed of three parts (stored on the stack):
+
+- pointer (to the heap where the chars: 'h', 'e', 'l', 'l', 'o' are)
+- len - length of the string (dependent on currently used memory)
+- capacity - capacity of the string (how many chars can be stored without asking
+  for more memory)
