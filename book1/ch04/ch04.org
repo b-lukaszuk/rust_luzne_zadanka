@@ -109,7 +109,7 @@ one the variable that owns it goes out of scope:
 
 At the ending curly bracket ('}') the memory is returned (it is done
 automatically, under the hood Rust calls a special function 'drop' that does
-that)
+that). 'Drop' is a Rust's version of C's 'free'.
 
 a String 's' is composed of three parts (stored on the stack):
 
@@ -128,3 +128,26 @@ let s2 = s1;
 #+end_src
 
 Then we copy the data on the stack (pointer, len, capacity) but not on the heap.
+
+When both 's1' and 's2' go out of scope the will both try to free the same
+memory (double free is an error).
+
+To ensure memory safety, after 'let s2 = s1;' the 's1' is considered no longer
+valid (no need to free anything when 's1' goes out of scope), hence 's1' can no
+longer be used.
+
+#+begin_src
+
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1;
+    println!("{s1}"); // error, s1 no longer valid, moved to s2
+}
+
+#+end_src
+
+'s1' is not immediately removed from the stack (in terms of memory cleanup), but
+becomes logically invalid (it is treated by compiler as garbage and/or
+uninitialized variable).
+
+Rust will never automatically create "deep" copies of data.
