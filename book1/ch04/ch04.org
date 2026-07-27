@@ -87,3 +87,14 @@ fn main() {
 }
 
 #+end_src
+
+** Memory and Allocation
+
+For string literals the amount of memory is known in advance and it does not
+change (immutability) hence we allocate it on the stack.
+
+The 'String' is allocated on the heap since memory must be requested (allocated)
+and freed at runtime.
+
+We request the memory by 'String::from'. The memory is automatically returned
+one the variable that owns it goes out of scope.
