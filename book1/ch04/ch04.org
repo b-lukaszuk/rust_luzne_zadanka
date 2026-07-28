@@ -170,3 +170,18 @@ fn main() {
 
 Here, 's' exists on the stack all the time (pointer, length, capacity), but
 '"hello"' from the heap gets dropped on new assignment.
+
+** Variables and Data Interacting with Clone
+
+'clone' method does a deep copy of 'String' (both the stack and the heap part).
+
+#+begin_src
+
+let s1 = String::from("hello");
+let s2 = s1.clone();
+
+println!("s1 = {s1}, s2 = {s2}");
+
+#+end_src
+
+However, using 'clone' is more memory expensive than borrowing.
