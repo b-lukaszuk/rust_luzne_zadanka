@@ -151,3 +151,22 @@ becomes logically invalid (it is treated by compiler as garbage and/or
 uninitialized variable).
 
 Rust will never automatically create "deep" copies of data.
+
+** Scope and Assignment
+
+When you assign a completely new value to an existing variable, Rust will call
+'drop' and free the original value's memory immediately.
+
+#+begin_src
+
+fn main() {
+    let mut s = String::from("hello");
+    s = String::from("ahoy"); // String ("hello") is 'dropped'
+
+    println!("{s} world!");
+}
+
+#+end_src
+
+Here, 's' exists on the stack all the time (pointer, length, capacity), but
+'"hello"' from the heap gets dropped on new assignment.
