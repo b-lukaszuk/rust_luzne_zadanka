@@ -185,3 +185,50 @@ println!("s1 = {s1}, s2 = {s2}");
 #+end_src
 
 However, using 'clone' is more memory expensive than borrowing.
+
+** Stack-Only Data: Copy
+
+Values that are stored on the stack (that got known) size are cheap to copy, and
+this is what happens under the hood (no borrowing).
+
+Compare:
+
+#+begin_src
+
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1;
+    println!("{s1}"); // error, s1 no longer valid, moved to s2
+}
+
+fn main() {
+    let x = 5;
+    let y = x;
+    println!("x = {x}, y = {y}"); // works just fine
+}
+
+#+end_src
+
+and
+
+#+begin_src
+
+fn main() {
+    let x = 5;
+    let mut y = x;
+    println!("x = {x}, y = {y}");
+
+    y = 10;
+    println!("x = {x}, y = {y}");
+}
+
+#+end_src
+
+Which prints:
+
+#+begin_src
+
+x = 5, y = 5
+x = 5, y = 10
+
+#+end_src
