@@ -250,3 +250,29 @@ able to implement the 'Copy' trait on it.
 In general simple types implement 'Copy' trait, complex (or composed) types do
 not. Of composed types, a tuple: '(i32, i32)' implements 'Copy', but '(i32,
 String)' does not.
+
+** Ownership and Functions
+
+Passing a variable to a function will move or copy (just like assignment does).
+
+#+begin_src
+
+fn takes_ownership(str: String) {
+    println!("{str}");
+} // end of scope, 'drop' is called
+
+fn makes_copy(int: i32) {
+    println!("{int}");
+} // end of scope, the copy goes out of scope
+
+fn main() {
+    let s = String::from("hello");
+    takes_ownership(s);
+    // println!("{s}"); // error, memory freed
+
+    let i = 5;
+    makes_copy(i);
+    println!("{i}"); // everything is ok
+}
+
+#+end_src
