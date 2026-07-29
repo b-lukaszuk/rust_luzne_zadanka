@@ -276,3 +276,28 @@ fn main() {
 }
 
 #+end_src
+
+** Return Values and Scope
+
+Returning values can transfer ownership.
+
+#+begin_src
+
+fn takes_and_gives_back_ownership(str: String) -> String {
+    str
+}
+
+fn gives_ownership() -> String {
+    String::from("yours")
+}
+
+fn main() {
+    let s1 = gives_ownership();
+    let s2 = String::from("hello");
+    let s3 = takes_and_gives_back_ownership(s2);
+    println!("{s1}"); // everything is ok
+                      // println!("{s2}"); // error, ownership has been transferred
+    println!("{s3}"); // everything is ok
+}
+
+#+end_src
