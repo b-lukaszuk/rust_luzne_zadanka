@@ -301,3 +301,6 @@ fn main() {
 }
 
 #+end_src
+
+If we want to use a value inside a function (value on the heap passed as an
+argument) without transferring the ownership we should use references.
