@@ -184,12 +184,12 @@ println!("s1 = {s1}, s2 = {s2}");
 
 #+end_src
 
-However, using 'clone' is more memory expensive than borrowing.
+However, using 'clone' is more memory expensive than 'moving'.
 
 ** Stack-Only Data: Copy
 
-Values that are stored on the stack (that got known) size are cheap to copy, and
-this is what happens under the hood (no borrowing).
+Values that are stored on the stack got known size and are cheap to copy, and
+this is what happens under the hood (no moving).
 
 Compare:
 
@@ -328,3 +328,20 @@ fn main() {
 The ampersands ('&') represent references. The opposite of referencing ('&') is
 dereferencing ('*') that is to be discussed in the later chapters. The ampersand
 ('&'), i.e. a reference, does not own the value.
+
+We call the action of creating a reference borrowing. By default, you cannot
+modify something you borrowed from someone (it's not your property).
+
+#+begin_src
+
+fn change(s: &String) {
+    s.push_str(", world");
+}
+
+fn main() {
+    let s1 = String::from("hello");
+    change(&s1); // error, a regular reference cannot be modified
+    println!("'{s1}'");
+}
+
+#+end_src
