@@ -324,3 +324,7 @@ fn main() {
 }
 
 #+end_src
+
+The ampersands ('&') represent references. The opposite of referencing ('&') is
+dereferencing ('*') that is to be discussed in the later chapters. The ampersand
+('&'), i.e. a reference, does not own the value.
