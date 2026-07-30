@@ -304,3 +304,23 @@ fn main() {
 
 If we want to use a value inside a function (value on the heap passed as an
 argument) without transferring the ownership we should use references.
+
+** References and Borrowing
+
+A reference is like a pointer (an address where the data is stored). Unlike a
+pointer, a reference is guaranteed to point to a valid value of a particular
+type.
+
+#+begin_src
+
+fn get_length(s: &String) -> usize {
+    s.len()
+}
+
+fn main() {
+    let s1 = String::from("hello");
+    let len = get_length(&s1);
+    println!("The word '{s1}' is composed o f {len} letters.");
+}
+
+#+end_src
