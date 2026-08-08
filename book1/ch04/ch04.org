@@ -345,3 +345,26 @@ fn main() {
 }
 
 #+end_src
+
+** Mutable References
+
+The Borrowed values can be modified if we say it explicitly (by using a mutable
+reference).
+
+#+begin_src
+
+fn change(s: &mut String) {
+    s.push_str(", world");
+}
+
+fn main() {
+    let mut s1 = String::from("hello");
+    change(&mut s1);
+    println!("'{s1}'");
+}
+
+#+end_src
+
+You cannot have more than one mutable reference at the same time! This allowed
+for controlled mutations and e.g. eliminated data race conditions known from
+some other programming languages.
