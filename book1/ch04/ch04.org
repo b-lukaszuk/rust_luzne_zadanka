@@ -368,3 +368,40 @@ fn main() {
 You cannot have more than one mutable reference at the same time! This allowed
 for controlled mutations and e.g. eliminated data race conditions known from
 some other programming languages.
+
+However, this code will compile (the mutable references do not occur
+simultaneously).
+
+#+begin_src
+
+let mut s1 = String::from("hello");
+
+{
+    let ref1 = &mut s;
+}
+
+let r2 = &mut s;
+
+#+end_src
+
+We also cannot have a mutable and immutable reference to the same value at the
+same time. That's because we don't want to change the value from under an
+immutable reference. For this reason many immutable references to the same value
+at the same time are allowed (we change nothing).
+
+Here, the code will compile because we do not use immutable references together with (or after)
+the immutable references.
+
+#+begin_src
+
+let mut s = String::from("hello");
+
+let r1 = &s; // no problem
+let r2 = &s; // no problem
+println!("{r1} and {r2}");
+// Variables r1 and r2 will not be used after this point.
+
+let r3 = &mut s; // no problem
+println!("{r3}");
+
+#+end_src
