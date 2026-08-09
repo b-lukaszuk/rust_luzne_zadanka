@@ -423,6 +423,11 @@ fn main() {
 }
 #+end_src
 
+** The Rules of References
+
+- at a given moment there may exist a single mutable reference OR many immutable references
+- references must always be valid
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#dangling-references
