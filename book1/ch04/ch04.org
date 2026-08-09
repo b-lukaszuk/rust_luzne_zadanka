@@ -12,7 +12,9 @@ guarantees without needing a garbage collector. Ownership is a set of rules that
 govern how a Rust program manages memory. If any of the rules are violated, the
 program won't compile.
 
-** The Stack and the Heap
+** What is Ownership?
+
+*** The Stack and the Heap
 
 Both the stack and the heap are parts of memory available to a program at
 runtime.
@@ -36,7 +38,7 @@ located on the heap).
 The data types covered so far (Chapter 3) are of known size, can be stored on
 stack.
 
-** Ownership Rules
+*** Ownership Rules
 
 Each value has an owner.
 
@@ -44,7 +46,7 @@ There can only be one owner at a time.
 
 When the owner goes out of scope, the value will be dropped.
 
-** Variable Scope
+*** Variable Scope
 
 #+begin_src
 
@@ -56,7 +58,7 @@ When the owner goes out of scope, the value will be dropped.
 
 #+end_src
 
-** The String Type
+*** The String Type
 
 'String' is an example of data type that is stored on the heap.
 
@@ -88,7 +90,7 @@ fn main() {
 
 #+end_src
 
-** Memory and Allocation
+*** Memory and Allocation
 
 For string literals the amount of memory is known in advance and it does not
 change (immutability) hence we allocate it on the stack.
@@ -152,7 +154,7 @@ uninitialized variable).
 
 Rust will never automatically create "deep" copies of data.
 
-** Scope and Assignment
+**** Scope and Assignment
 
 When you assign a completely new value to an existing variable, Rust will call
 'drop' and free the original value's memory immediately.
@@ -171,7 +173,7 @@ fn main() {
 Here, 's' exists on the stack all the time (pointer, length, capacity), but
 '"hello"' from the heap gets dropped on new assignment.
 
-** Variables and Data Interacting with Clone
+**** Variables and Data Interacting with Clone
 
 'clone' method does a deep copy of 'String' (both the stack and the heap part).
 
@@ -186,7 +188,7 @@ println!("s1 = {s1}, s2 = {s2}");
 
 However, using 'clone' is more memory expensive than 'moving'.
 
-** Stack-Only Data: Copy
+**** Stack-Only Data: Copy
 
 Values that are stored on the stack got known size and are cheap to copy, and
 this is what happens under the hood (no moving).
@@ -251,7 +253,7 @@ In general simple types implement 'Copy' trait, complex (or composed) types do
 not. Of composed types, a tuple: '(i32, i32)' implements 'Copy', but '(i32,
 String)' does not.
 
-** Ownership and Functions
+*** Ownership and Functions
 
 Passing a variable to a function will move or copy (just like assignment does).
 
@@ -277,7 +279,7 @@ fn main() {
 
 #+end_src
 
-** Return Values and Scope
+*** Return Values and Scope
 
 Returning values can transfer ownership.
 
@@ -346,7 +348,7 @@ fn main() {
 
 #+end_src
 
-** Mutable References
+*** Mutable References
 
 The Borrowed values can be modified if we say it explicitly (by using a mutable
 reference).
@@ -406,7 +408,7 @@ println!("{r3}");
 
 #+end_src
 
-** Dangling References
+*** Dangling References
 
 In some languages you may have a dangling pointer, i.e. the reference to memory
 that was already freed. In Rust you are guaranteed not to have them.
@@ -423,7 +425,7 @@ fn main() {
 }
 #+end_src
 
-** The Rules of References
+*** The Rules of References
 
 - at a given moment there may exist a single mutable reference OR many immutable references
 - references must always be valid
