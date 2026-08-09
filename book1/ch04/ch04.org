@@ -432,4 +432,4 @@ fn main() {
 
 * Next To Read
 
-https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#dangling-references
+https://doc.rust-lang.org/book/ch04-03-slices.html
