@@ -406,6 +406,23 @@ println!("{r3}");
 
 #+end_src
 
+** Dangling References
+
+In some languages you may have a dangling pointer, i.e. the reference to memory
+that was already freed. In Rust you are guaranteed not to have them.
+
+#+begin_src
+
+fn dangle() -> &String {
+    let s = String::from("hello");
+    &s
+} // s lifetime ends here, the memory reserved for 's' gets freed here
+
+fn main() {
+    let reference_to_nothing = dangle(); // error, reference freed memory
+}
+#+end_src
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#dangling-references
