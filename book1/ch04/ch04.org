@@ -475,6 +475,23 @@ fn main() {
 #+end_src
 
 
+*** String Slices
+
+To deal with this we got 'string slices', i.e. references to a contiguous
+sequence of the elements of a 'String'.
+
+#+begin_src
+
+let s = String::from("hello world");
+
+let hello = &s[0..5]; // inclusive-exclusive
+let world = &s[6..11]; // inclusive-exclusive
+
+#+end_src
+
+Internally, a slice stores the starting index and the length of a slice.
+
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch04-03-slices.html
