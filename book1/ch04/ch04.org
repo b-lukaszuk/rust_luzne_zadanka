@@ -464,7 +464,7 @@ itself which may sometimes cause some problems, e.g.
 fn main() {
     let mut s = String::from("hello world");
 
-    let word = first_word(&s); // word will get the value 5
+    let word = get_first_word(&s); // word will get the value 5
 
     s.clear(); // this empties the String, making it equal to ""
 
@@ -497,7 +497,42 @@ you may also skip the end string, i.e. use '&s[3..]' to take from the third
 element till the last of a String. By dropping both the start and the end you
 slice the entire string ('&s[..]').
 
+Now, we can improve on our 'get_first_word':
+
+#+begin_src
+
+fn get_first_word(s: &String) -> &str {
+    // s is composed of ascii chars only
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
+
+#+end_src
+
+The slice and the String are in sync, which helps with potential errors:
+
+#+begin_src
+
+fn main() {
+    let mut s = String::from("hello world");
+
+    let first_word = get_first_word(&s); // immutable reference
+
+    s.clear(); // error!
+
+    println!("the first word of '{}' is '{}'.", s, first_word);
+}
+
+#+end_src
+
 
 * Next To Read
 
-https://doc.rust-lang.org/book/ch04-03-slices.html
+https://doc.rust-lang.org/book/ch04-03-slices.html#string-literals-as-slices
