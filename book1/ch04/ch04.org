@@ -492,6 +492,11 @@ let world = &s[6..11]; // inclusive-exclusive
 Internally, a slice stores the pointer to starting index location in memory and
 the length of a slice.
 
+In ranges, you may skip the zero, i.e. '&s[0..2]' and '&s[..2]' are equivalent,
+you may also skip the end string, i.e. use '&s[3..]' to take from the third
+element till the last of a String. By dropping both the start and the end you
+slice the entire string ('&s[..]').
+
 
 * Next To Read
 
