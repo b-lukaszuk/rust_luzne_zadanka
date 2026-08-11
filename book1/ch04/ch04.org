@@ -489,7 +489,8 @@ let world = &s[6..11]; // inclusive-exclusive
 
 #+end_src
 
-Internally, a slice stores the starting index and the length of a slice.
+Internally, a slice stores the pointer to starting index location in memory and
+the length of a slice.
 
 
 * Next To Read
