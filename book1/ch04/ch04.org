@@ -589,4 +589,4 @@ fn main() {
 
 * Next To Read
 
-https://doc.rust-lang.org/book/ch04-03-slices.html#string-literals-as-slices
+https://doc.rust-lang.org/book/ch04-03-slices.html#other-slices
