@@ -474,7 +474,6 @@ fn main() {
 
 #+end_src
 
-
 *** String Slices
 
 To deal with this we got 'string slices', i.e. references to a contiguous
@@ -532,6 +531,16 @@ fn main() {
 
 #+end_src
 
+**** String Literals as Slices
+
+#+begin_src
+
+let s = "Hello, world!";
+
+#+end_src
+
+The type of `s` is `&str`, a slice pointing to a specific point in a string.
+`&str` is an immutable reference.
 
 * Next To Read
 
