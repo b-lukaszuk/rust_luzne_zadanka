@@ -542,6 +542,51 @@ let s = "Hello, world!";
 The type of `s` is `&str`, a slice pointing to a specific point in a string.
 `&str` is an immutable reference.
 
+**** String Slices as Parameters
+
+#+begin_src
+
+// s: &str allows to use it on both &String and &str (see main below)
+fn get_first_word(s: &str) -> &str {
+    // s is composed of ascii chars only
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
+
+fn main() {
+    let my_string = String::from("hello world");
+
+    let first_word = get_first_word(&my_string[0..6]);
+    println!("the first word of '{}' is '{}'.", my_string, first_word);
+
+    let first_word = get_first_word(&my_string[..]);
+    println!("the first word of '{}' is '{}'.", my_string, first_word);
+
+    // string literal is a string slice already
+    let my_string_literal = String::from("hello world");
+
+    let first_word_literal = get_first_word(&my_string_literal[0..6]);
+    println!(
+        "the first word of '{}' is '{}'.",
+        my_string_literal, first_word_literal
+    );
+
+    let first_word_literal = get_first_word(&my_string_literal[..]);
+    println!(
+        "the first word of '{}' is '{}'.",
+        my_string_literal, first_word_literal
+    );
+}
+
+#+end_src
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch04-03-slices.html#string-literals-as-slices
