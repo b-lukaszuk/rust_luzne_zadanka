@@ -615,6 +615,10 @@ the sliec is [2, 3]
 Here `slice` stores a reference to a first element and a length (just like with
 strings and their slices).
 
+** Summary
+
+Ownership, borrowing, and slices ensure memory safety in Rust at compile time.
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch04-03-slices.html#other-slices
