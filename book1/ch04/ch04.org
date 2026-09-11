@@ -587,6 +587,34 @@ fn main() {
 
 #+end_src
 
+**** Other Slices
+
+There are other types of slices, i.e. references to a part of a collection, e.g.
+
+#+begin_src
+
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[1..3]; // the slice has the type &[i32]
+
+    println!("the array is {:?}", a);
+    println!("the sliec is {:?}", slice);
+}
+
+#+end_src
+
+Which prints:
+
+#+begin_src
+
+the array is [1, 2, 3, 4, 5]
+the sliec is [2, 3]
+
+#+end_src
+
+Here `slice` stores a reference to a first element and a length (just like with
+strings and their slices).
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch04-03-slices.html#other-slices
