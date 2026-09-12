@@ -619,6 +619,3 @@ strings and their slices).
 
 Ownership, borrowing, and slices ensure memory safety in Rust at compile time.
 
-* Next To Read
-
-https://doc.rust-lang.org/book/ch05-00-structs.html
