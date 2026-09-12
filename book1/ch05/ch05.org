@@ -1,0 +1,12 @@
+#+title: Ch05
+#+STARTUP: overview
+#+STARTUP: indent
+#+OPTIONS: \n: t
+
+* Using Structs to Structure Related Data
+
+https://doc.rust-lang.org/book/ch05-00-structs.html
+
+* Next To Read
+
+https://doc.rust-lang.org/book/ch05-00-structs.html
