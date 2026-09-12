@@ -13,4 +13,4 @@ into a container.
 
 * Next To Read
 
-https://doc.rust-lang.org/book/ch05-00-structs.html
+https://doc.rust-lang.org/book/ch05-01-defining-structs.html
