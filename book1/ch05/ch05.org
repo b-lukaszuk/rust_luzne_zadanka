@@ -7,6 +7,10 @@
 
 https://doc.rust-lang.org/book/ch05-00-structs.html
 
+Just like in some other programming languages a struct(ure) is a data type that
+packages or groups together a few related values (possibly of different types)
+into a container.
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch05-00-structs.html
