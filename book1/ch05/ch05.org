@@ -145,5 +145,4 @@ fn main() {
 #+end_src
 
 * Next To Read
-
-https://doc.rust-lang.org/book/ch05-01-defining-structs.html
+https://doc.rust-lang.org/book/ch05-01-defining-structs.html#creating-instances-with-struct-update-syntax
