@@ -94,6 +94,32 @@ fn main() {
 
 #+end_src
 
+We may write an initializer function for a user:
+
+#+begin_src
+
+fn init_user(email: String, username: String) -> User {
+    User {
+        active: true,
+        username: username,
+        email: email,
+        sign_in_count: 1,
+    }
+}
+
+fn main() {
+    let user2 = init_user("name2".to_string(), "email2@example.com".to_string());
+
+    println!("The user2:");
+    println!("\tname:{}", user2.username);
+    println!("\temail:{}", user2.email);
+    println!("\tis_active:{}", user2.active);
+    println!("\tsign_in_count:{}", user2.sign_in_count);
+}
+
+#+end_src
+
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch05-01-defining-structs.html
