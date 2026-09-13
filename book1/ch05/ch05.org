@@ -11,6 +11,38 @@ Just like in some other programming languages a struct(ure) is a data type that
 packages or groups together a few related values (possibly of different types)
 into a container.
 
+** Structs - Definition and Initialization
+
+
+An exemplary `User` structure.
+
+#+begin_src
+
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
+#+end_src
+
+An exemplary initialization of `User` structure (the fields don't have to be
+initialized in the order in which they are in the definition).
+
+#+begin_src
+
+fn main() {
+    let user1 = User {
+        active: true,
+        username: String::from("name1"),
+        email: String::from("email1@example.com"),
+        sign_in_count: 1,
+    };
+}
+
+#+end_src
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch05-01-defining-structs.html
