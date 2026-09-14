@@ -144,5 +144,50 @@ fn main() {
 
 #+end_src
 
+*** Struct Update Syntax
+
+This syntax is used to create a struct, the one that is almost identical to the
+existing one.
+
+#+begin_src
+
+fn print_user_data(user: User) {
+    println!(
+        "User({}, {}, {}, {})",
+        user.active, user.username, user.email, user.sign_in_count,
+    );
+}
+
+fn main() {
+    let mut user1 = init_user("name1".to_string(), "email1@example.com".to_string());
+    let mut user2 = User {
+        email: "email2@example.com".to_string(),
+        username: "name2".to_string(),
+        ..user1
+    };
+
+    user1.sign_in_count = 2;
+    user2.active = false;
+
+    print!("user1:\t");
+    print_user_data(user1);
+
+    print!("user2:\t");
+    print_user_data(user2);
+}
+
+#+end_src
+
+which prints:
+
+#+begin_src
+
+user1:	User(true, email1@example.com, name1, 2)
+user2:	User(false, name2, email2@example.com, 1)
+
+}
+
+#+end_src
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-01-defining-structs.html#creating-instances-with-struct-update-syntax
