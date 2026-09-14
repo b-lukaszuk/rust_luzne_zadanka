@@ -216,4 +216,4 @@ in this example, because its value was not moved out of `user1`.
 #+END_QUOTE
 
 * Next To Read
-https://doc.rust-lang.org/book/ch05-01-defining-structs.html#creating-instances-with-struct-update-syntax
+https://doc.rust-lang.org/book/ch05-01-defining-structs.html#creating-different-types-with-tuple-structs
