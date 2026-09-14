@@ -98,7 +98,7 @@ We may write an initializer function for a user:
 
 #+begin_src
 
-fn init_user(email: String, username: String) -> User {
+fn init_user(username: String, email: String) -> User {
     User {
         active: true,
         username: username,
@@ -123,7 +123,7 @@ fn main() {
 
 #+begin_src
 
-fn init_user(email: String, username: String) -> User {
+fn init_user(username: String, email: String) -> User {
     User {
         active: true,
         username, // cause the field and fn argument got the same name
