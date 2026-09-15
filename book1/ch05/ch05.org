@@ -215,5 +215,26 @@ in this example, because its value was not moved out of `user1`.
 
 #+END_QUOTE
 
+*** Tuple Structs
+
+Tuple Structs are structs that resemble tuples (the don't have names associated
+with the fields, only types):
+
+#+begin_src
+
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+fn main() {
+let black = Color(0, 0, 0);
+let origin = Point(0, 0, 0);
+
+}
+
+#+end_src
+
+`Color` and `Point` are different types (although they take 3 `i32` each). For
+that reason a function that takes a `Point` cannot accept a `Color`.
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-01-defining-structs.html#creating-different-types-with-tuple-structs
