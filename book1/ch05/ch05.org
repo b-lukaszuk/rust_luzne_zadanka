@@ -236,13 +236,13 @@ let origin = Point(0, 0, 0);
 `Color` and `Point` are different types (although they take 3 `i32` each). For
 that reason a function that takes a `Point` cannot accept a `Color`.
 
-Tuple Structs can be destructured (like tuples) and indexed using `.` and a
-number (like tuples), e.g.
+Tuple Structs can be destructured (similar to tuples) and indexed using `.` and
+a number (similar to tuples), e.g.
 
 #+begin_src
 
-    let Point(x, y, z) = origin; // destructuring
-    println!("x: {}, y: {}, z: {}", x, y, z);
+let Point(x, y, z) = origin; // destructuring
+println!("x: {}, y: {}, z: {}", x, y, z);
 
 #+end_src
 
@@ -254,6 +254,5 @@ x: 0, y: 0, z: 0
 
 #+end_src
 
-
 * Next To Read
-https://doc.rust-lang.org/book/ch05-01-defining-structs.html#creating-different-types-with-tuple-structs
+https://doc.rust-lang.org/book/ch05-01-defining-structs.html#defining-unit-like-structs
