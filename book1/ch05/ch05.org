@@ -278,4 +278,4 @@ else. To write `User` with `&str` however we need to use `lifetimes` covered in
 Chapter 10 (otherwise, we are likely to get an compilation error).
 
 * Next To Read
-https://doc.rust-lang.org/book/ch05-01-defining-structs.html#defining-unit-like-structs
+https://doc.rust-lang.org/book/ch05-02-example-structs.html
