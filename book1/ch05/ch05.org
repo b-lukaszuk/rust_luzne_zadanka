@@ -254,5 +254,20 @@ x: 0, y: 0, z: 0
 
 #+end_src
 
+*** Unit-Like Structs
+
+An unit-like struct has no fields (similar to `()`). They are useful to
+implement a trait on a type that doesn't store data in it.
+
+#+begin_src
+
+struct AlwaysEqual; // unit-like struct
+
+fn main() {
+    let subject = AlwaysEqual;
+}
+
+#+end_src
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-01-defining-structs.html#defining-unit-like-structs
