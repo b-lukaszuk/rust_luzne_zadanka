@@ -277,5 +277,30 @@ case the struct does not own the data, but points to the data owned by something
 else. To write `User` with `&str` however we need to use `lifetimes` covered in
 Chapter 10 (otherwise, we are likely to get an compilation error).
 
+* Example Program with Structs
+
+A Program for calculating the area of a rectangle.
+
+Take 1 (no structs):
+
+#+begin_src
+
+fn get_rectangle_area(width: u32, height: u32) -> u32 {
+    width * height
+}
+
+fn main() {
+    let width1 = 30;
+    let height1 = 50;
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        get_rectangle_area(width1, height1)
+    );
+}
+
+#+end_src
+
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-02-example-structs.html
