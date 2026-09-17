@@ -328,4 +328,4 @@ moreover swapping elements of a tuple (here `width` and `height`) may sometimes
 cause an error (although here it makes no difference).
 
 * Next To Read
-https://doc.rust-lang.org/book/ch05-02-example-structs.html
+https://doc.rust-lang.org/book/ch05-02-example-structs.html#refactoring-with-structs
