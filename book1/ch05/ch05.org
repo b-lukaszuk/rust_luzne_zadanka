@@ -355,4 +355,4 @@ fn main() {
 #+end_src
 
 * Next To Read
-https://doc.rust-lang.org/book/ch05-02-example-structs.html#refactoring-with-structs
+https://doc.rust-lang.org/book/ch05-02-example-structs.html#adding-functionality-with-derived-traits
