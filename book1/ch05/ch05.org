@@ -327,5 +327,32 @@ Tuple adds a bit of structure, but the elements in a tuple are not named,
 moreover swapping elements of a tuple (here `width` and `height`) may sometimes
 cause an error (although here it makes no difference).
 
+Take 3 (structs):
+
+#+begin_src
+
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn get_area(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        get_area(&rect1)
+    );
+}
+
+#+end_src
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-02-example-structs.html#refactoring-with-structs
