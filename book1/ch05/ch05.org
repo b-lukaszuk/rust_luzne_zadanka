@@ -455,4 +455,4 @@ Later on we'll learn about other traits and how to implement their custom
 behaviors.
 
 * Next To Read
-https://doc.rust-lang.org/book/ch05-02-example-structs.html#adding-functionality-with-derived-traits
+https://doc.rust-lang.org/book/ch05-03-method-syntax.html
