@@ -391,12 +391,68 @@ The code above returns something like:
 help: the trait `std::fmt::Display` is not implemented for `Rectangle`
 
 // snip
+
 #+end_src
 
-since by default `{}` inside of `pritnln!` uses a `Display` formatting. The
-`Display` formatting (or `Display` trait) is not defined by default to
-`Rectangle` (and other structs), since it is not 100% clear how the user would
-like to print any possible configuration of its fields.
+This is because by default `{}` inside of `pritnln!` uses a `Display`
+formatting. The `Display` formatting (or `Display` trait) is not defined by
+default to `Rectangle` (and other structs), since it is not 100% clear how the
+user would like to print any possible configuration of its fields.
+
+Unfortunately it (`Rectangle`) doesn't also implement (by default) the `Debug`
+trait. So a quick fix with `println!("rect1 is {:?}", rect1);` or even
+`println!("rect1 is {:#?}", rect1);` will not work.
+
+To fix it we quickly add the suggested by compiler's error message
+`#[derive(Debug)]` just before the struct name:
+
+#+begin_src
+
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    println!("rect1 is {:#?}", rect1);
+}
+
+#+end_src
+
+Now we get a printout (`{:?}` - for `Debug` printout, `{:#?}` - for pretty
+`Debug` printout).
+
+An alternative to `{:#?}` would be to use `dbg!` macro. Since it takes the
+ownership of an expression, prints to `stderr` and returns the value of the
+expression. For that reason it is usually called in the form: `dbg!(&rect1)`:
+
+#+begin_src
+
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    dbg!(&rect1);
+}
+
+#+end_src
+
+Later on we'll learn about other traits and how to implement their custom
+behaviors.
 
 * Next To Read
 https://doc.rust-lang.org/book/ch05-02-example-structs.html#adding-functionality-with-derived-traits
