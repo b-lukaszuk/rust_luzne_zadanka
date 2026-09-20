@@ -460,5 +460,42 @@ Methods are defined with the `fn` keyword within a context of a struct (or an
 `enum` or a trait object), their first parameter is always `self` (a reference
 to instance a method is called on).
 
+*** Method Syntax
+
+#+begin_src
+
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle { // method definition
+    fn get_area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        rect1.get_area()
+    );
+}
+
+#+end_src
+
+The `self` is short for `self: &Self` and it is an immutable borrow. We could
+also use a mutable borrow (if needed) with `&mut self`.
+
+We can use the same name of a method like of a field in the struct (e.g.
+`rect1.width` and `rect1.width`). Usually we do this for getters (then the field
+would be private and the method public), which are not defined automatically.
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-03-method-syntax.html
