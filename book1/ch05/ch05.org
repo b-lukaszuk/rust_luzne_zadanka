@@ -269,7 +269,7 @@ fn main() {
 
 #+end_src
 
-** Ownership of Structs
+*** Ownership of Structs
 
 Previously, in `User` struct, we used `String`s for some field names. Thanks to
 this the struct owns its data. It is possible to use `&str` instead. In that
@@ -277,7 +277,7 @@ case the struct does not own the data, but points to the data owned by something
 else. To write `User` with `&str` however we need to use `lifetimes` covered in
 Chapter 10 (otherwise, we are likely to get an compilation error).
 
-* Example Program with Structs
+** Example Program with Structs
 
 A Program for calculating the area of a rectangle.
 
@@ -454,7 +454,7 @@ fn main() {
 Later on we'll learn about other traits and how to implement their custom
 behaviors.
 
-* Methods
+** Methods
 
 Methods are defined with the `fn` keyword within a context of a struct (or an
 `enum` or a trait object), their first parameter is always `self` (a reference
