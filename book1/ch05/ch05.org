@@ -498,4 +498,4 @@ We can use the same name of a method like of a field in the struct (e.g.
 would be private and the method public), which are not defined automatically.
 
 * Next To Read
-https://doc.rust-lang.org/book/ch05-03-method-syntax.html
+https://doc.rust-lang.org/book/ch05-03-method-syntax.html#methods-with-more-parameters
