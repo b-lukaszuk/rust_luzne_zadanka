@@ -454,5 +454,11 @@ fn main() {
 Later on we'll learn about other traits and how to implement their custom
 behaviors.
 
+* Methods
+
+Methods are defined with the `fn` keyword within a context of a struct (or an
+`enum` or a trait object), their first parameter is always `self` (a reference
+to instance a method is called on).
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-03-method-syntax.html
