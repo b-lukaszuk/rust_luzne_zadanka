@@ -587,4 +587,4 @@ The `::` is used for both associated functions and namespaces created by
 modules.
 
 * Next To Read
-https://doc.rust-lang.org/book/ch05-03-method-syntax.html#methods-with-more-parameters
+https://doc.rust-lang.org/book/ch05-03-method-syntax.html#multiple-impl-blocks
