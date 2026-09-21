@@ -497,5 +497,54 @@ We can use the same name of a method like of a field in the struct (e.g.
 `rect1.width` and `rect1.width`). Usually we do this for getters (then the field
 would be private and the method public), which are not defined automatically.
 
+*** Methods with More Params
+
+Example:
+
+#+begin_src
+
+// snip derive
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    // snip, previous method
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    let rect2 = Rectangle {
+        width: 10,
+        height: 40,
+    };
+    let rect3 = Rectangle {
+        width: 60,
+        height: 45,
+    };
+
+    println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
+    println!("Can rect2 hold rect3? {}", rect2.can_hold(&rect3));
+}
+
+#+end_src
+
+which prints:
+
+#+begin_src
+
+Can rect1 hold rect2? true
+Can rect2 hold rect3? false
+
+#+end_src
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-03-method-syntax.html#methods-with-more-parameters
