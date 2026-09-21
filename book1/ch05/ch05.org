@@ -546,5 +546,45 @@ Can rect2 hold rect3? false
 
 #+end_src
 
+*** Associated Functions
+
+All functions inside `impl` bloc are associated functions (with a given type,
+e.g. `Rectangle` mentioned before). There are also associated functions with no
+`self` parameter (like in the case of `String::from` we met before). An example
+of how to define such a function is seen below.
+
+#+begin_src
+
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn get_square(side_length: u32) -> Self {
+        Self {
+            width: side_length,
+            height: side_length,
+        }
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    let square1 = Rectangle::get_square(10);
+
+    println!("rect1 is a rectangle: {:?}", rect1);
+    println!("square1 is a rectangle and a square: {:?}", square1);
+}
+
+#+end_src
+
+The `::` is used for both associated functions and namespaces created by
+modules.
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-03-method-syntax.html#methods-with-more-parameters
