@@ -665,5 +665,10 @@ impl Rectangle {
 
 are legal.
 
+** Summary
+
+Structs allow to create custom types/objects with their functionalities (via
+`impl` blocks and methods) that are useful to model many some domain knowledge.
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-03-method-syntax.html#multiple-impl-blocks
