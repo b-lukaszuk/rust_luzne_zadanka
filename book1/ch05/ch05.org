@@ -586,5 +586,84 @@ fn main() {
 The `::` is used for both associated functions and namespaces created by
 modules.
 
+*** Multiple impl Blocks
+
+A structure is allowed to have multiple `impl` blocks, e.g.
+
+#+begin_src
+
+impl Rectangle {
+    fn get_area(&self) -> u32 {
+        self.width * self.height
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+
+    fn get_square(side_length: u32) -> Self {
+        Self {
+            width: side_length,
+            height: side_length,
+        }
+    }
+}
+
+#+end_src
+
+or
+
+#+begin_src
+
+impl Rectangle {
+    fn get_area(&self) -> u32 {
+        self.width * self.height
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+}
+
+impl Rectangle {
+    fn get_square(side_length: u32) -> Self {
+        Self {
+            width: side_length,
+            height: side_length,
+        }
+    }
+}
+
+#+end_src
+
+but also
+
+#+begin_src
+
+impl Rectangle {
+    fn get_area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
+impl Rectangle {
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+}
+
+impl Rectangle {
+    fn get_square(side_length: u32) -> Self {
+        Self {
+            width: side_length,
+            height: side_length,
+        }
+    }
+}
+
+#+end_src
+
+are legal.
+
 * Next To Read
 https://doc.rust-lang.org/book/ch05-03-method-syntax.html#multiple-impl-blocks
