@@ -1,0 +1,11 @@
+#+title: Ch06
+#+STARTUP: overview
+#+STARTUP: indent
+#+OPTIONS: \n: t
+
+* Enums and Pattern Matching
+
+https://doc.rust-lang.org/book/ch06-00-enums.html
+
+* Next To Read
+https://doc.rust-lang.org/book/ch06-00-enums.html
