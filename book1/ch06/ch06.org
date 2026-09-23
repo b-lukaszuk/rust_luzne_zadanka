@@ -7,5 +7,13 @@
 
 https://doc.rust-lang.org/book/ch06-00-enums.html
 
+`Enums` are for the types that hold a limited number of specific variants.
+One of characteristic/famous `enums` is `Option` (it resembles Haskell's `Maybe`
+type) that is used to express a value in a container or the total lack of a
+value.
+
+Next, we'll see `match` and pattern matching capabilities, which are a handier
+alternative to `if let` constructs.
+
 * Next To Read
 https://doc.rust-lang.org/book/ch06-00-enums.html
