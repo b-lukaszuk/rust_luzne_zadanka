@@ -16,4 +16,5 @@ Next, we'll see `match` and pattern matching capabilities, which are a handier
 alternative to `if let` constructs.
 
 * Next To Read
-https://doc.rust-lang.org/book/ch06-00-enums.html
+
+https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html
