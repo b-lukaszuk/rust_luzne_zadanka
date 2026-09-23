@@ -670,5 +670,3 @@ are legal.
 Structs allow to create custom types/objects with their functionalities (via
 `impl` blocks and methods) that are useful to model many some domain knowledge.
 
-* Next To Read
-https://doc.rust-lang.org/book/ch06-00-enums.html
