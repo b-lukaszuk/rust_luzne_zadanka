@@ -131,6 +131,38 @@ enum Message {
 
 #+end_src
 
+You can also define methods for enums with `impl` (similar to the one in
+structs):
+
+#+begin_src
+
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+impl Message {
+    fn call(&self) {
+        println!("The message says: <<Hi! I'm a message>>.");
+    }
+}
+
+fn main() {
+    let msg = Message::Quit;
+    msg.call();
+}
+
+#+end_src
+
+which prints:
+
+#+begin_src
+
+The message says: <<Hi! I'm a message>>.
+
+#+end_src
 
 * Next To Read
 
