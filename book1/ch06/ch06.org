@@ -29,6 +29,19 @@ enum IpAddrKind { // types of IP address
 
 #+end_src
 
+and use it like:
+
+#+begin_src
+
+fn main() {
+    let ipv4: IpAddrKind = IpAddrKind::V4;
+    let ipv6 = IpAddrKind::V6;
+
+    println!("Hello, world!");
+}
+
+#+end_src
+
 *** Enum Values
 
 An IP address could be represented using an Enum, Struct mixup:
@@ -81,6 +94,43 @@ fn main() {
 
 here `IpAddr::V4()` or `IpAddr::V6()` is a constructor that takes a `String` and
 returns an instance of `IpAddr`.
+
+We could also limit the possible values of `IpAddr` even further with:
+
+#+begin_src
+
+enum IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+
+fn main() {
+    let home = IpAddr::V4(127, 0, 0, 1);
+    let loopback = IpAddr::V6(String::from("::1"));
+
+    println!("Hello, world!");
+}
+
+#+end_src
+
+BTW. Standard library got its own definition of `IpAddr`, see:
+https://doc.rust-lang.org/std/net/enum.IpAddr.html (to use it you need to bring
+it into scope first, see chapter 7).
+
+Inside of an enum you can have many types, e.g. strings, numeric types, or
+structs, e.g.
+
+#+begin_src
+
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+#+end_src
+
 
 * Next To Read
 
