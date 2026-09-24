@@ -15,6 +15,21 @@ value.
 Next, we'll see `match` and pattern matching capabilities, which are a handier
 alternative to `if let` constructs.
 
+** Defining an Enum
+
+Enums are used to say a value is one of a possible (usually narrow) set of
+values, e.g.
+
+#+begin_src
+
+enum IpAddrKind { // types of IP address
+    V4,
+    V6,
+}
+
+#+end_src
+
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html
