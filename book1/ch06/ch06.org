@@ -164,6 +164,16 @@ The message says: <<Hi! I'm a message>>.
 
 #+end_src
 
+*** The Option Enum
+
+The Option Enum is like Haskell's Maybe. It encodes a value that is something
+(alone or with other value inside) or nothing.
+
+Rust doesn't have the null value. In languages that do have it, a variable can
+always be null or not-nulll. Still, many conside null to be a mistake
+[especially if a null value is used as a not-null value (or in non-null
+context)].
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html#the-option-enum
