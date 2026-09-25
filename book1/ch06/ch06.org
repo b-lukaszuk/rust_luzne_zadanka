@@ -170,9 +170,41 @@ The Option Enum is like Haskell's Maybe. It encodes a value that is something
 (alone or with other value inside) or nothing.
 
 Rust doesn't have the null value. In languages that do have it, a variable can
-always be null or not-nulll. Still, many conside null to be a mistake
+always be null or not-nulll. Still, many consider null to be a mistake
 [especially if a null value is used as a not-null value (or in non-null
 context)].
+
+The Option Enum is defined like:
+
+#+begin_src
+
+enum Option<T> {
+    None,
+    Some(T),
+}
+
+#+end_src
+
+where `<T>` is a generic type parameter (covered in detail in chapter 10).
+
+and used like:
+
+#+begin_src
+
+let some_number: Option<i32> = Some(1);
+let absent_number: Option<i32> = None;
+let some_char = Some('a')
+
+#+end_src
+
+`absent_number` need to have the type declaration, otherwise the compiler may
+not now if `None` is `Option<i32>` or `Option<char>` or some other `Option`.
+
+You cannot add: `Some(1) + 2` since you're adding different types (`Option<i32>`
+and `i32`). You need to extract `i32` from `Option<i32>` (or convert it to
+`i32`) first. One way to extract the contents of `Option` is with `pub fn
+unwrap_or(self, default: T) -> T`, another option is to use the `match`
+expression.
 
 * Next To Read
 
