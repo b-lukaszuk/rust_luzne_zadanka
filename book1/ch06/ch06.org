@@ -206,6 +206,42 @@ and `i32`). You need to extract `i32` from `Option<i32>` (or convert it to
 unwrap_or(self, default: T) -> T`, another option is to use the `match`
 expression.
 
+** The match Construct
+
+The `match` construct is used to compare a value against (a) pattern(s).
+Different kind of patterns are covered in detail in chapter 19.
+
+An example of pattern matching in action:
+
+#+begin_src
+
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+}
+
+fn get_value_in_cents(coin: Coin) -> u8 {
+    match coin {
+        Coin::Penny => 1, // change 1 to: {println!("a"); 1}, should work OK
+        Coin::Nickel => 5,
+        Coin::Dime => 10, // change 10 to 'a' for error
+        Coin::Quarter => 25, // comment for error (not exhaustive pattern)
+    }
+}
+
+fn main() {
+    let cn = Coin::Dime;
+    println!("The value of cn in cents is: {}.", get_value_in_cents(cn));
+}
+
+#+end_src
+
+The code in each arm is an expression. All the expressions need to return the
+same type of values. The result return from match is decided by the matching
+arm.
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch06-02-match.html
