@@ -242,6 +242,30 @@ The code in each arm is an expression. All the expressions need to return the
 same type of values. The result return from match is decided by the matching
 arm.
 
+*** Patterns That Bind to Values
+
+Those patterns are to extract a value from the inside of a struct/object. e.g.
+
+#+begin_src
+
+enum IpAddr {
+    V4(String),
+    _V6,
+}
+
+fn main() {
+    let home = IpAddr::V4("127.0.0.1".to_string());
+    let addr = match home {
+        IpAddr::V4(addr) => addr,
+        _ => "unknown".to_string(),
+    };
+
+    println!("The IPV4 address is: {}", addr);
+}
+
+#+end_src
+
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch06-02-match.html
