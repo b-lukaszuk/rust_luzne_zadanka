@@ -299,4 +299,4 @@ Found even number: 2 in arr: [1, 2, 3, 4]
 
 * Next To Read
 
-https://doc.rust-lang.org/book/ch06-02-match.html#the-optiont-match-pattern
+https://doc.rust-lang.org/book/ch06-02-match.html#matches-are-exhaustive
