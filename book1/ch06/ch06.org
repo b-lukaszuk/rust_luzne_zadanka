@@ -297,6 +297,30 @@ Found even number: 2 in arr: [1, 2, 3, 4]
 
 #+end_src
 
+*** Matches Are Exhaustive
+
+A match must cover all possibilities, i.e.
+
+#+begin_src
+
+fn is_even(n: &i32) -> bool {
+    n % 2 == 0
+}
+
+fn main() {
+    let arr = [1, 2, 3, 4];
+    let possible_even = arr.into_iter().find(is_even);
+
+    match possible_even {
+        Some(x) => println!("Found even number: {} in arr: {:?}", x, arr),
+        // no None branch
+    }
+}
+
+#+end_src
+
+will return a compilation error, since the None branch was not covered.
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch06-02-match.html#matches-are-exhaustive
