@@ -450,4 +450,4 @@ fn main() {
 
 * Next To Read
 
-https://doc.rust-lang.org/book/ch06-03-if-let.html
+https://doc.rust-lang.org/book/ch06-03-if-let.html#staying-on-the-happy-path-with-letelse
