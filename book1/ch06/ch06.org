@@ -282,8 +282,8 @@ fn main() {
     let possible_even = arr.into_iter().find(is_even);
 
     match possible_even {
-        Some(x) => println!("Found even number: {} in arr: {:?}", x, arr),
-        None => println!("Didn't find even number in arr: {:?}", arr),
+        Some(x) => println!("Found an even number: {} in arr: {:?}", x, arr),
+        None => println!("Didn't find an even number in arr: {:?}", arr),
     }
 }
 
@@ -293,7 +293,7 @@ which prints:
 
 #+begin_src
 
-Found even number: 2 in arr: [1, 2, 3, 4]
+Found an even number: 2 in arr: [1, 2, 3, 4]
 
 #+end_src
 
@@ -312,7 +312,7 @@ fn main() {
     let possible_even = arr.into_iter().find(is_even);
 
     match possible_even {
-        Some(x) => println!("Found even number: {} in arr: {:?}", x, arr),
+        Some(x) => println!("Found an even number: {} in arr: {:?}", x, arr),
         // no None branch
     }
 }
@@ -380,7 +380,7 @@ fn main() {
     let possible_even = arr.into_iter().find(is_even);
 
     match possible_even {
-        Some(x) => println!("Found even number: {}", x),
+        Some(x) => println!("Found an even number: {}", x),
         _ => (),
     }
 }
@@ -400,7 +400,7 @@ fn main() {
     let possible_even = arr.into_iter().find(is_even);
 
     if let Some(x) = possible_even {
-        println!("Found even number: {}", x)
+        println!("Found an even number: {}", x)
     }
 }
 
