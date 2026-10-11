@@ -448,6 +448,68 @@ fn main() {
 
 #+end_src
 
+** Happy Path with let...else
+
+#+begin_src
+
+fn is_even(n: &i32) -> bool {
+    n % 2 == 0
+}
+
+fn return_even() -> i32 {
+    let arr = [1, 1, 3];
+    let possible_even = arr.into_iter().find(is_even);
+    let Some(num) = possible_even else {
+        return 4;
+    };
+    num
+}
+
+fn main() {
+    println!("The return_even returns {}", return_even());
+}
+
+#+end_src
+
+prints
+
+#+begin_src
+
+The return_even returns 4
+
+#+end_src
+
+Whereas
+
+#+begin_src
+
+fn is_even(n: &i32) -> bool {
+    n % 2 == 0
+}
+
+fn return_even() -> i32 {
+    let arr = [1, 1, 3];
+    let possible_even = arr.into_iter().find(is_even);
+    let Some(num) = possible_even else {
+        return 4;
+    };
+    num
+}
+
+fn main() {
+    println!("The return_even returns {}", return_even());
+}
+
+#+end_src
+
+prints
+
+#+begin_src
+
+The return_even returns 2
+
+#+end_src
+
 * Next To Read
 
 https://doc.rust-lang.org/book/ch06-03-if-let.html#staying-on-the-happy-path-with-letelse
