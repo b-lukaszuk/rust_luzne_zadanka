@@ -510,6 +510,3 @@ The return_even returns 2
 
 #+end_src
 
-* Next To Read
-
-https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html
