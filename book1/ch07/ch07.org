@@ -16,3 +16,7 @@ The Rust module system includes:
 - Paths
 
 In this chapter all the above will be covered.
+
+* Next to read
+
+https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html
