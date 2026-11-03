@@ -5,4 +5,14 @@
 
 * Packages, Crates and Modules
 
-https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html
+All the previous programs were one module placed in one file. However, for
+larger projects, programs should be split into multiple modules and multiple
+files.
+
+The Rust module system includes:
+- Packages,
+- Crates
+- Modules,
+- Paths
+
+In this chapter all the above will be covered.
