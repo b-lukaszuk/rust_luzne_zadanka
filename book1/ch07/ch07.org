@@ -17,6 +17,12 @@ The Rust module system includes:
 
 In this chapter all the above will be covered.
 
+** Packages and Crates
+
+A crate is the smallest amount of code that can be compiled to executable or
+library. Previous one file programs that we wrote were crates. Crates can
+contain modules (to be explained later).
+
 * Next to read
 
 https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html
