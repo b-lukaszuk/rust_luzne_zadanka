@@ -30,6 +30,12 @@ Library - no `main`, no executable, got functionality used by other programs.
 
 Most often `crate` means library.
 
+A package is a bundle of >= 1 crates with `Cargo.toml` file that describes how
+to build them.
+
+A package can contain >= 1 binary crates, but only 1 library crate. A package
+must contain at least 1 crate (binary or library).
+
 * Next to read
 
 https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html
