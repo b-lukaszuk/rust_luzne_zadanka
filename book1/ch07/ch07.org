@@ -36,6 +36,28 @@ to build them.
 A package can contain >= 1 binary crates, but only 1 library crate. A package
 must contain at least 1 crate (binary or library).
 
+Using `cargo new my-project` creates new project, with the structure:
+
+#+begin_src
+
+.
+├── Cargo.toml
+└── src
+    └── main.rs
+
+2 directories, 2 files
+
+#+end_src
+
+`src/main.rs` is the crate root of a binary crate with the same name as the
+package. If there were `src/lib.rs` then it would be a crate root for a library
+crate with the same name as the package. Crate root files are passed to `rustc`
+command under the hood for builds to complete.
+
+A package with both `src/main.rs` and `src/lib.rs` has two crates (binary and
+library). A package can have multiple binary crates by placing files in the
+`src/bin/` (each file here is a separate binary crate).
+
 * Next to read
 
 https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html
