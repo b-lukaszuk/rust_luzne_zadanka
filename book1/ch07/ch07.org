@@ -23,6 +23,13 @@ A crate is the smallest amount of code that can be compiled to executable or
 library. Previous one file programs that we wrote were crates. Crates can
 contain modules (to be explained later).
 
+Executable (binary crate) - stand alone compiled program, must have `main`
+function (an entry point).
+
+Library - no `main`, no executable, got functionality used by other programs.
+
+Most often `crate` means library.
+
 * Next to read
 
 https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html
