@@ -60,4 +60,4 @@ library). A package can have multiple binary crates by placing files in the
 
 * Next to read
 
-https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html
+https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html
