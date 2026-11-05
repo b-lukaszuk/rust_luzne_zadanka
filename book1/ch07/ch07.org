@@ -58,6 +58,22 @@ A package with both `src/main.rs` and `src/lib.rs` has two crates (binary and
 library). A package can have multiple binary crates by placing files in the
 `src/bin/` (each file here is a separate binary crate).
 
+** Modules
+
+You may declare module named garden with e.g. `mod garden` in `main.rs`. The
+module code usually should be in `src/garden.rs` or `src/garden/mod.rs`. A
+sub-module named vegetables usually should be placed in
+`src/garden/vegetables.rs` or `src/garden/vegetables/mod.rs`. To define the
+type `Asparagus` in the module `vegetables` use
+`crate::garden::vegetables::Asparagus`.
+
+By default a code in a module is private. To make a module public use `pub mod`.
+You can make items of a public module public by putting `pub` like in `pub
+Asparagus`..
+
+Instead of using `crate::garden::vegetables::Asparagus` all the time, type: `use
+crate::garden::vegetables::Asparagus` to use `Asparagus` on its own.
+
 * Next to read
 
 https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html
