@@ -129,4 +129,4 @@ pub struct Asparagus {}
 
 * Next to read
 
-https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html
+https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html#grouping-related-code-in-modules
