@@ -93,7 +93,7 @@ and
 
 #+begin_src
 
-// main.rs
+// src/main.rs
 
 use crate::garden::vegetables::Asparagus;
 
@@ -103,6 +103,27 @@ fn main() {
     let plant = Asparagus {};
     println!("I'm growing {plant:?}!");
 }
+
+#+end_src
+
+and
+
+#+begin_src
+
+// src/garden.rs
+
+pub mod vegetables; // include code in src/garden/vegetables.rs
+
+#+end_src
+
+and
+
+#+begin_src
+
+// src/garden/vegetables.rs
+
+#[derive(Debug)]
+pub struct Asparagus {}
 
 #+end_src
 
