@@ -74,6 +74,38 @@ Asparagus`..
 Instead of using `crate::garden::vegetables::Asparagus` all the time, type: `use
 crate::garden::vegetables::Asparagus` to use `Asparagus` on its own.
 
+Example:
+
+#+begin_src
+
+backyard
+├── Cargo.lock
+├── Cargo.toml
+└── src
+    ├── garden
+    │   └── vegetables.rs
+    ├── garden.rs
+    └── main.rs
+
+#+end_src
+
+and
+
+#+begin_src
+
+// main.rs
+
+use crate::garden::vegetables::Asparagus;
+
+pub mod garden; // include code in src/garden.rs
+
+fn main() {
+    let plant = Asparagus {};
+    println!("I'm growing {plant:?}!");
+}
+
+#+end_src
+
 * Next to read
 
 https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html
